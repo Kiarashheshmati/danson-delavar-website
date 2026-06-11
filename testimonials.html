@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — Danson Delavar LLP</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23F2EDE6'/><text x='32' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%23424142' letter-spacing='-1'>d</text><text x='44' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%2375261F' letter-spacing='-1'>d</text><line x1='14' y1='52' x2='50' y2='52' stroke='%2375261F' stroke-width='1.5'/></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --charcoal: #2A2A2A;
+      --gray-warm: #424142;
+      --crimson: #75261F;
+      --crimson-light: #8C3328;
+      --cream: #F2EDE6;
+      --slate: #E5E1D8;
+      --off-white: #F8F5F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* A11y: visible keyboard focus ring (Web Interface Guidelines / UI-UX Pro Max — accessibility priority 1).
+       :where() keeps specificity 0 so existing element-specific focus styles still win. */
+    :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+      outline: 2px solid #C24A3F;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    :where(a, button, [tabindex]) { -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+    /* ─── NAV (centered masthead, light variant) ─── */
+    #site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 88px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      column-gap: 56px;
+      padding: 0 56px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      transition: height 0.4s ease;
+    }
+    #site-nav::after {
+      content: '';
+      position: absolute;
+      left: 56px; right: 56px; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(117,38,31,0.18) 18%, rgba(117,38,31,0.18) 82%, transparent);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      white-space: nowrap;
+    }
+    .nav-logo .danson { color: var(--gray-warm); }
+    .nav-logo .delavar { color: var(--crimson); }
+    .nav-logo .llp-mark {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: rgba(42,42,42,0.45);
+      margin-left: 12px;
+      align-self: center;
+      padding-top: 4px;
+    }
+    .nav-logo img {
+      display: block;
+      height: 38px;
+      width: auto;
+      transition: height 0.4s ease;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links.nav-left  { justify-content: flex-end; }
+    .nav-links.nav-right { justify-content: flex-start; }
+    .nav-links a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: 0;
+      width: 0; height: 1px;
+      background: var(--crimson);
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; left: 0; }
+    .nav-links a.active { color: var(--crimson); }
+
+    /* ─── PAGE BANNER ─── */
+    .page-banner {
+      position: relative;
+      padding: 168px 56px 96px;
+      background:
+        radial-gradient(120% 100% at 80% 30%, rgba(117,38,31,0.22) 0%, transparent 55%),
+        radial-gradient(100% 80% at 15% 90%, rgba(0,0,0,0.55) 0%, transparent 60%),
+        linear-gradient(165deg, #1a1a1a 0%, #0e0e0e 55%, #161010 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .page-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .banner-inner { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; }
+    .banner-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #A8402E;
+      margin-bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .banner-eyebrow::before {
+      content: ''; width: 36px; height: 1px; background: #A8402E;
+    }
+    .banner-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(54px, 8vw, 108px);
+      letter-spacing: 0.04em;
+      line-height: 1.02;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      position: relative;
+      display: inline-block;
+    }
+    .banner-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -14px;
+      width: 72px; height: 1px;
+      background: #DA8A7C;
+    }
+    .banner-lede {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.7);
+      max-width: 680px;
+    }
+
+    /* ─── BODY ─── */
+    .page-body {
+      background: var(--cream);
+      padding: 120px 24px 144px;
+    }
+    .body-inner { max-width: 1100px; margin: 0 auto; }
+
+    .placeholder-note {
+      background: #fff;
+      border-left: 3px solid var(--crimson);
+      padding: 28px 32px;
+      margin-bottom: 72px;
+    }
+    .placeholder-note .label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 8px;
+    }
+    .placeholder-note p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ─── FEATURED TESTIMONIAL (Pierre Trudeau letter) ─── */
+    .featured-test {
+      margin-bottom: 80px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 34px 76px -42px rgba(117,38,31,0.30);
+    }
+    .featured-inner {
+      display: grid;
+      grid-template-columns: 0.82fr 1fr;
+      align-items: stretch;
+    }
+    .featured-letter {
+      margin: 0;
+      background:
+        radial-gradient(120% 100% at 30% 20%, rgba(117,38,31,0.06), transparent 60%),
+        var(--slate);
+      padding: 46px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .featured-letter img {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      background: #fff;
+      box-shadow: 0 20px 48px -18px rgba(0,0,0,0.42);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .featured-text {
+      padding: 60px 56px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .featured-eyebrow::before {
+      content: ''; width: 34px; height: 1px; background: var(--crimson);
+    }
+    .featured-quote {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.2vw, 31px);
+      line-height: 1.42;
+      letter-spacing: 0.01em;
+      color: var(--charcoal);
+      margin: 0 0 30px;
+    }
+    .featured-attr {
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      letter-spacing: 0.03em;
+      color: var(--charcoal);
+      padding-top: 22px;
+      border-top: 1px solid rgba(117,38,31,0.18);
+    }
+    .featured-attr span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: #888;
+      margin-top: 8px;
+      line-height: 1.55;
+    }
+    @media (max-width: 900px) {
+      .featured-inner { grid-template-columns: 1fr; }
+      .featured-letter { padding: 34px 26px; }
+      .featured-letter img { max-width: 320px; }
+      .featured-text { padding: 38px 28px 42px; }
+    }
+
+    /* ─── QUOTES ─── */
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    .quote-card {
+      position: relative;
+      background: #fff;
+      padding: 56px 44px 40px;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+    .quote-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--crimson);
+      box-shadow: 0 28px 56px -32px rgba(117,38,31,0.22);
+    }
+    .quote-card::before {
+      content: '"';
+      position: absolute;
+      top: 10px; left: 28px;
+      font-family: 'Cinzel', serif;
+      font-size: 96px;
+      color: var(--crimson);
+      opacity: 0.18;
+      line-height: 1;
+    }
+    .quote-card .quote {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 28px;
+    }
+    .quote-card .attribution {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .quote-card .attribution .badge {
+      width: 38px; height: 38px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--crimson);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+    .quote-card .attribution .who {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+    .quote-card .attribution .role {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-top: 2px;
+    }
+    .quote-card.empty {
+      background: transparent;
+      border-style: dashed;
+      border-color: rgba(0,0,0,0.16);
+      box-shadow: none !important;
+    }
+    .quote-card.empty::before { color: #aaa; opacity: 0.25; }
+    .quote-card.empty .quote { color: #999; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      padding: 28px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+    }
+    .footer-logo .delavar { color: var(--crimson); opacity: 0.8; }
+    .footer-logo-img { display: block; height: 36px; width: auto; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px;
+    }
+    .mobile-toggle span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--charcoal);
+    }
+
+    @media (max-width: 900px) {
+      #site-nav {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo toggle";
+        height: 68px;
+        padding: 0 24px;
+        column-gap: 0;
+      }
+      .nav-logo { grid-area: logo; font-size: 18px; }
+      .nav-logo .llp-mark { display: none; }
+      .mobile-toggle { grid-area: toggle; display: flex; }
+      .nav-links.nav-left, .nav-links.nav-right {
+        display: none;
+        margin: 0; padding: 0; gap: 0;
+      }
+      #site-nav.menu-open {
+        grid-template-areas:
+          "logo toggle"
+          "left left"
+          "right right";
+        grid-template-rows: 68px auto auto;
+        height: auto;
+      }
+      #site-nav.menu-open .nav-links.nav-left  { grid-area: left;  display: flex; flex-direction: column; padding: 8px 0 0 0; }
+      #site-nav.menu-open .nav-links.nav-right { grid-area: right; display: flex; flex-direction: column; padding: 0 0 16px 0; }
+      #site-nav.menu-open .nav-links a { padding: 14px 32px; font-size: 13px; letter-spacing: 0.24em; display: block; }
+      #site-nav.menu-open .nav-links a::after { display: none; }
+      .page-banner { padding: 132px 24px 72px; }
+      .page-body { padding: 72px 20px 96px; }
+      .quote-grid { grid-template-columns: 1fr; gap: 20px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── INTERACTIVE TESTIMONIAL CARDS ─── */
+    .quote-card[role="button"] {
+      cursor: pointer;
+      outline: none;
+    }
+    .quote-card[role="button"]:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 4px;
+    }
+    .quote-card[role="button"]::after {
+      content: '↗';
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      color: var(--crimson);
+      opacity: 0.4;
+      transform: translate(0, 0);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .quote-card[role="button"]:hover::after {
+      opacity: 0.85;
+      transform: translate(2px, -2px);
+    }
+    /* Persistent "read full" affordance injected into each clickable card */
+    .quote-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .quote-card-cta .cta-arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .quote-card[role="button"]:hover .quote-card-cta {
+      opacity: 1;
+    }
+    .quote-card[role="button"]:hover .quote-card-cta .cta-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ─── TESTIMONIAL MODAL ─── */
+    .test-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .test-modal.open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .test-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 380ms cubic-bezier(0.22,1,0.36,1), backdrop-filter 380ms ease;
+      cursor: pointer;
+    }
+    .test-modal.open .test-modal-backdrop {
+      background: rgba(10,10,10,0.6);
+      backdrop-filter: blur(3px);
+    }
+    .test-modal-panel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      width: min(720px, 92vw);
+      max-height: 88vh;
+      background: var(--cream);
+      opacity: 0;
+      transition: transform 380ms cubic-bezier(0.22,1,0.36,1), opacity 380ms cubic-bezier(0.22,1,0.36,1);
+      overflow: hidden;
+      box-shadow: 0 36px 100px -24px rgba(0,0,0,0.55), 0 8px 24px -8px rgba(0,0,0,0.25);
+      display: flex;
+      flex-direction: column;
+    }
+    .test-modal.open .test-modal-panel {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    .test-modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(117,38,31,0.3);
+      background: transparent;
+      color: var(--crimson);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+      font-family: 'Inter', sans-serif;
+      padding: 0;
+    }
+    .test-modal-close:hover {
+      background: var(--crimson);
+      color: #fff;
+      transform: scale(1.06);
+    }
+    .test-modal-body {
+      padding: 64px 56px 48px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(117,38,31,0.3) transparent;
+    }
+    .test-modal-body::-webkit-scrollbar { width: 6px; }
+    .test-modal-body::-webkit-scrollbar-thumb {
+      background: rgba(117,38,31,0.3);
+      border-radius: 3px;
+    }
+    .test-modal-mark {
+      font-family: 'Cinzel', serif;
+      font-size: 60px;
+      color: var(--crimson);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .test-modal-quote {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    .test-modal-quote p {
+      margin: 0 0 16px;
+    }
+    .test-modal-quote p:last-child { margin-bottom: 0; }
+    .test-modal-attribution {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 28px;
+      margin-top: 36px;
+      border-top: 1px solid rgba(117,38,31,0.2);
+    }
+    .test-modal-attribution .badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--crimson);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .test-modal-attribution .who {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--charcoal);
+    }
+    .test-modal-attribution .role {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin-top: 4px;
+    }
+    body.modal-open {
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+      .test-modal-panel {
+        width: 94vw;
+        max-height: 90vh;
+      }
+      .test-modal-body { padding: 56px 24px 32px; }
+      .test-modal-quote { font-size: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .test-modal-backdrop,
+      .test-modal-panel { transition: none !important; }
+    }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 1000;
+      background: var(--crimson); color: #fff;
+      padding: 10px 18px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    }
+    .skip-link:focus-visible { left: 8px; top: 8px; outline: 2px solid #fff; outline-offset: 2px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MOBILE OPTIMIZATION — phones (≤600px). APPEND-ONLY.
+       Everything ≥601px (tablet + desktop) is untouched.
+       ══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      /* Banner — the big Cinzel title (min 54px) overflows a phone; scale it to fit */
+      .page-banner { padding: 116px 22px 58px; }
+      .banner-eyebrow { font-size: 11px; letter-spacing: 0.24em; }
+      .banner-title { font-size: clamp(34px, 11vw, 52px); }
+      .banner-lede { font-size: 16px; }
+
+      /* Body + cards — phone gutters and comfortable card padding */
+      .page-body { padding: 56px 20px 80px; }
+      .placeholder-note { padding: 22px 22px; margin-bottom: 48px; }
+      .featured-test { margin-bottom: 56px; }
+      .featured-text { padding: 32px 24px 38px; }
+      .quote-card { padding: 44px 26px 32px; }
+      .quote-card::before { font-size: 72px; top: 6px; left: 20px; }
+    }
+
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- NAV (centered masthead) -->
+<nav id="site-nav">
+  <ul class="nav-links nav-left">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#advocacy">Practice</a></li>
+    <li><a href="index.html#team">Partners</a></li>
+  </ul>
+  <a href="index.html" class="nav-logo" aria-label="Danson Delavar LLP">
+    <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_90_Burgundy-01_90.svg" alt="Danson Delavar LLP" />
+  </a>
+  <ul class="nav-links nav-right">
+    <li><a href="testimonials.html" class="active">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<span id="main-content" tabindex="-1"></span>
+
+<!-- BANNER -->
+<section class="page-banner">
+  <div class="banner-inner">
+    <p class="banner-eyebrow">In Their Words</p>
+    <h1 class="banner-title">Testimonials</h1>
+    <p class="banner-lede">
+      Reflections from clients, counsel, and institutions the firm has stood beside — in disputes where preparation, judgment, and trust shaped the outcome.
+    </p>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="page-body">
+  <div class="body-inner">
+
+    <!-- Featured: letter from the Rt. Hon. Pierre Elliott Trudeau -->
+    <article class="featured-test reveal">
+      <div class="featured-inner">
+        <figure class="featured-letter">
+          <img loading="lazy" src="assets/frame-shots/PierreTrudeauLetter.jpg" alt="Personal letter from the Rt. Hon. Pierre Elliott Trudeau to Tim Danson, dated September 8, 1987" />
+        </figure>
+        <div class="featured-text">
+          <p class="featured-eyebrow">From the 15th Prime Minister of Canada</p>
+          <blockquote class="featured-quote">&ldquo;It was good to see you again in Ottawa, keeping in fighting trim. This country will need you!&rdquo;</blockquote>
+          <p class="featured-attr">The Rt. Hon. Pierre Elliott Trudeau
+            <span>15th Prime Minister of Canada &middot; Personal correspondence to Tim&nbsp;S.&nbsp;B.&nbsp;Danson following the Meech Lake Accord Appearance, September&nbsp;8,&nbsp;1987</span>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <div class="quote-grid">
+      <article class="quote-card reveal" data-open-test="test-french" role="button" tabindex="0" aria-label="Read full testimonial — Donna & Doug French">
+        <p class="quote">
+          A better lawyer we do not know; a better friend, there is none. Tim completely and instinctively understood how we felt about protecting Kristen's dignity, privacy, and memory.
+        </p>
+        <div class="attribution">
+          <div class="badge">DF</div>
+          <div>
+            <div class="who">Donna &amp; Doug French</div>
+            <div class="role">Parents of Kristen French</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-mahaffy" role="button" tabindex="0" aria-label="Read full testimonial — Deborah & Robert (Dan) Mahaffy">
+        <p class="quote">
+          We will forever hold Tim with love and gratitude in the highest regard for his professional advocacy for us and all Victims of Crime. He is a person of principle, integrity, honour and vision.
+        </p>
+        <div class="attribution">
+          <div class="badge">DM</div>
+          <div>
+            <div class="who">Deborah &amp; Robert (Dan) Mahaffy</div>
+            <div class="role">Parents of Leslie Mahaffy</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-adams" role="button" tabindex="0" aria-label="Read full testimonial — Jeff Adams">
+        <p class="quote">
+          Nobody else could have accomplished the win that you secured at the hearing before the Court of Arbitration for Sport. Thank you for rescuing my athletic career. Thank you for giving me my life back.
+        </p>
+        <div class="attribution">
+          <div class="badge">JA</div>
+          <div>
+            <div class="who">Jeff Adams</div>
+            <div class="role">Paralympic Gold Medallist &middot; World Champion</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-rosenzweig" role="button" tabindex="0" aria-label="Read full testimonial — Chavi Rosenzweig">
+        <p class="quote">
+          Tim is our safe place in an unsafe and unstable world. A man of greatness, integrity, courage, compassion, benevolence and altruism — at their finest.
+        </p>
+        <div class="attribution">
+          <div class="badge">CR</div>
+          <div>
+            <div class="who">Chavi Rosenzweig &amp; Family</div>
+            <div class="role">Long-standing Client</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-leone" role="button" tabindex="0" aria-label="Read full testimonial — Det. Sgt. Mike Leone">
+        <p class="quote">
+          Tim Danson worked tirelessly to prepare this case for trial. There was no better person to present this case.
+        </p>
+        <div class="attribution">
+          <div class="badge">ML</div>
+          <div>
+            <div class="who">Det. Sgt. Mike Leone</div>
+            <div class="role">Toronto Police Service</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-baylis" role="button" tabindex="0" aria-label="Read full testimonial — The Family of Police Officer Todd Baylis">
+        <p class="quote">
+          Tim poured his heart and soul into this action that places him in a class of litigators all his own. Tim never swayed in his dedication to our cause, and fought for us as though Todd were a member of his own family.
+        </p>
+        <div class="attribution">
+          <div class="badge">TB</div>
+          <div>
+            <div class="who">The Baylis Family</div>
+            <div class="role">Family of Police Officer Todd Baylis</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-zoricic" role="button" tabindex="0" aria-label="Read full testimonial — Bebe, Silvia and Kat Zoricic">
+        <p class="quote">
+          Tim stands out with his high-energy, honesty, passion for justice, and dedication to what is right and fair. Tim never gave up. He kept his word and so much more.
+        </p>
+        <div class="attribution">
+          <div class="badge">BZ</div>
+          <div>
+            <div class="who">Bebe, Silvia and Kat Zoricic</div>
+            <div class="role">Parents and sister to International Canadian Ski Cross Champion, Nik Zoricic</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-stephenson" role="button" tabindex="0" aria-label="Read full testimonial — Jim & Anna Stephenson">
+        <p class="quote">
+          You successfully mounted an intense and unparalleled examination of Canadian correctional and parole systems. Your commitment and hard work never faltered.
+        </p>
+        <div class="attribution">
+          <div class="badge">JS</div>
+          <div>
+            <div class="who">Jim &amp; Anna Stephenson</div>
+            <div class="role">Parents of Christopher Stephenson &middot; Christopher's Law</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-shawn" role="button" tabindex="0" aria-label="Read full testimonial — Shawn F.">
+        <p class="quote">
+          Not once did Marjan make us feel discouraged. She told us to focus on my father and let her do the worrying for us. We trusted her completely &mdash; we are so grateful we chose her to help carry us through such a difficult time.
+        </p>
+        <div class="attribution">
+          <div class="badge">SF</div>
+          <div>
+            <div class="who">Shawn F.</div>
+            <div class="role">Catastrophic Personal Injury &middot; Family Case</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-milad" role="button" tabindex="0" aria-label="Read full testimonial — Milad B.">
+        <p class="quote">
+          Marjan Delavar was a beacon of hope for my family during one of the most difficult periods of our lives. She and her team treated us with genuine care and compassion, advocating for us as though we were members of their own family. A decade and a half later, we remain eternally grateful.
+        </p>
+        <div class="attribution">
+          <div class="badge">MB</div>
+          <div>
+            <div class="who">Milad B.</div>
+            <div class="role">Catastrophic Personal Injury &middot; TTC Collision</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-hesam" role="button" tabindex="0" aria-label="Read full testimonial — Hesam M.">
+        <p class="quote">
+          After a devastating head-on collision, Marjan guided us through every stage of the process. The commitment she made when she first met us at the hospital never wavered. Her experience, professionalism, and genuine support made us feel we were never alone.
+        </p>
+        <div class="attribution">
+          <div class="badge">HM</div>
+          <div>
+            <div class="who">Hesam M.</div>
+            <div class="role">Personal Injury &middot; Highway Collision</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="quote-card reveal" data-open-test="test-hamed" role="button" tabindex="0" aria-label="Read full testimonial — Hamed M.">
+        <p class="quote">
+          Finding Marjan was extremely fortuitous in a moment we didn't know who to trust. Marjan immediately made an impression on my father and mother and took complete charge. At every step, Marjan was present and completely available to our questions and eased our concerns.
+        </p>
+        <div class="attribution">
+          <div class="badge">HM</div>
+          <div>
+            <div class="who">Hamed M.</div>
+            <div class="role">Catastrophic Personal Injury &middot; Elderly Family Case</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIAL MODALS ─── -->
+<div id="test-french" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>On April 16, 1992, our 15-year-old daughter, Kristen, was abducted by Paul Bernardo and Karla Homolka, forcefully confined for three days and then murdered. This was a horrific tragedy, a tragedy that no family should ever have to endure. Our family was crippled with the pain of our loss and frustrated with the justice system.</p>
+        <p>We subsequently met Tim Danson at the CAVEAT office prior to an arrest being made in regard to our daughter's death. Tim immediately offered to assist us in any way he could. Never did we expect that we would have to take him up on his offer. We were aware of the existence of the videotapes taken by Bernardo and Homolka and we understood the implications of these tapes if they ever became public. We called Tim for advice regarding the videotapes. He immediately offered to help us. We were so grateful for the offer, but we knew that we could never afford his services. Tim was quick to brush our concerns aside and told us that he would not charge us.</p>
+        <p>The evidence in this case was very in-depth as to how Kristen was brutally beaten, violated and degraded as her perpetrator tried to gain control over her. We were totally in an uncontrollable state of pain, anguish and despair, thinking of how Kristen would feel about these facts being made public. Any victim would feel humiliated and embarrassed if every vile act committed against him/her were to be openly and graphically detailed in public, but to a 15-year-old girl, it would be beyond anything she could mentally or emotionally contend with.</p>
+        <p>With the finding of the videotapes that Bernardo had made of his unspeakable crimes depicting his attempt to humiliate and taunt Kristen, our worst fears were realized. We felt it was outrageous that the court planned to show these videos in an open courtroom for all to see. It was when we expressed our feelings on this matter, indicating that we wanted the viewing of the videotapes to be restricted to only those who were responsible to see that justice was served, that we were informed that we had no standing in court; that we had no say in the matter, and that the videotapes would be played in open court. This was when we really turned to Tim for his help. Tim completely and instinctively understood how we felt about protecting Kristen's dignity, privacy and memory, even though she was no longer living.</p>
+        <p>Tim's concern for the dignity and privacy of our daughter's memory was sincere and heartfelt. The hours that he spent painstakingly preparing our case seemed endless and the time he spent talking to us, comforting us at all hours of the day and night and reassuring us that he would do everything possible to have our wishes respected, did a lot to calm us down. Tim gave us faith that victims did not have to stay quiet; that their voices could be heard, even if not alive. It was a very long, emotional fight, but thanks to Tim Danson, we were given standing in the criminal trial of Paul Bernardo to bring our own standalone motion, supported by a significant evidentiary record, including expert evidence to prevent public and media access to the Bernardo videotapes. This was a gut-wrenching experience which fortunately resulted in success. We would not have survived an adverse ruling and Tim knew this.</p>
+        <p>Likewise, when we brought an application to destroy the videotapes and other sensitive exhibits, we once again obtained standing; we were given the right to call evidence, and to make fulsome submissions. Again, through Tim's relentless hard work and dedication, our application was granted and all this evil evidence was destroyed. In one important sense we knew that Kristen could not be harmed again. She was finally free. This was enormously important to us.</p>
+        <p>As time went on, we were able to have standing in other legal proceedings such as being represented by Tim in Joliette, Quebec to impose post-sentence conditions on Karla Homolka at the end of her 12-year sentence. None of this would have been possible without Tim's perseverance and dedication. When Tim Danson has a mission, he uses every avenue available to complete it. He is a person of principle, passion and absolute integrity. It has given us a sense of accomplishment to have achieved real success in advancing victims' rights.</p>
+        <p>To this day, Tim has remained a family friend. Whenever a new issue comes to the forefront regarding our case, Tim is immediately on the phone preparing us for what is to come. He is our buffer, there to stabilize us during the traumatic times such as Paul Bernardo's parole hearings. A better lawyer we do not know; a better friend, there is none.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">DF</div>
+        <div>
+          <div class="who">Donna &amp; Doug French</div>
+          <div class="role">Parents of Kristen French</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-mahaffy" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Dear Tim:</p>
+        <p>Words seem inadequate and too small to describe the immense admiration, appreciation and gratitude we feel for Tim Danson from our very first meeting to the present.</p>
+        <p>Our daughter, Leslie Erin Mahaffy was murdered in June 1991. Paul Bernardo and Karla Homolka were charged with her murder. Homolka served 12 years for manslaughter and Bernardo is currently serving a life sentence for 1st degree murder. The incredible anguish and distress is not visible in those few statements. We so wish it had been that simple.</p>
+        <p>As we approached trial, we were informed by the Crown that horrific videotapes of the sexual assaults and torture inflicted on Leslie would be shown in open court, which could then be disseminated by the media. We needed to protect our daughter from this additional indignity and further assaults. Could there be no privacy afforded to her? We needed to protect our daughter's dignity and memory.</p>
+        <p>I contacted Tim and left our first meeting at his office feeling hopeful, supported and informed of the legal challenges ahead of us and optimism that a resolution could be found. How could it have been foreseen how many legal challenges were ahead of us? However, at our initial meeting and many times in the 30 years since Tim has refused any reimbursement or payment of his expenses from us. How does one bestow our gratitude for the 30 years of pro bono services he has given us? This generosity of his time and expertise is an incredible gift to us and to everyone who may one day benefit from the changes his advocacy has delivered to all in Canada.</p>
+        <p>Before, during and post-trial, too many new legal situations arose that Tim guided us through with information, support and compassion. Tim understood our perspectives and passionately advocated for us in the courts and with the media, police and the Crown. He was always available to assist us day and night, 24/7, whether emotionally, as our friend and our lawyer. He always took the time to ensure that we understood the legal arguments we needed to meet and overcome.</p>
+        <p>The following are a few of the legal issues that we could not have survived without Tim's knowledge, professionalism and advice &ldquo;to do the right thing&rdquo;. So grateful for his endless hours of preparation and hard work to assist us to better navigate these trials and legal proceedings with our souls intact:</p>
+        <ul style="margin: 0 0 16px; padding-left: 22px; list-style: none;">
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Prevention of videotapes being played in open court at Bernardo's trial; to prevent media and public access to these videotapes</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Stopping Bernardo's attempt to plea bargain to 2nd degree murder, weaponizing the videotapes to extract our agreement</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Homolka's plea bargain</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Advocating that Homolka had breached her plea bargain, and that the plea resolution ought to be withdrawn</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Opposing Homolka's statutory release and bringing a &ldquo;gating&rdquo; application so that Homolka would spend every day of her 12-year sentence in prison</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Attending in court in Joliette, Quebec the day Homolka was being released to have post-prison conditions imposed on her pursuant to the Criminal Code of Canada</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Attending in Montreal responding to Homolka's appeal from the post-sentence conditions imposed on her</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Prevention of sensitive materials being published in a book</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Prosecution of Bernardo's first lawyer regarding non-disclosure of the videotapes</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Publication of offender's book</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Obtaining Court Order to destroy sensitive evidence including all copies of the videotapes, crime scene and autopsy photographs</li>
+          <li style="position: relative; margin-bottom: 10px; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Transfer of Bernardo from maximum to medium security</li>
+          <li style="position: relative; margin-bottom: 0; padding-left: 4px;"><span style="position: absolute; left: -18px; color: var(--crimson);">&ndash;</span>Preparation and attendance at Bernardo's parole hearings</li>
+        </ul>
+        <p>Tim was always there to muster civility when we could not. He had an incredible ability to recognize fairness and promote fairness when we could not. He was there with his super sense of humour to help us when ours had abandoned us. Tim was also there with us with his unlimited compassion and offers of assistance when personal family events complicated our lives further.</p>
+        <p>Tim was there with us with compassion in every text, phone call and e-mail with us. So many moments we shared throughout the years when it seemed our daughter became his daughter and that helped us endure. As much as we have endured the horrific knowledge of what happened to our daughter Tim made sure that we were protected from so much of the wretched information.</p>
+        <p>Tim was not protected from any of the evidence. He performed every aspect of his representation of us, viewing every piece of evidence and has coped with his own experienced trauma that this case evidence thrust upon him. We will forever hold Tim with love and gratitude in the highest regard for his professional advocacy for us and all Victims of Crime. He is a person of principle, integrity, honour and vision.</p>
+        <p>Deborah and Robert (Dan) Mahaffy</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">DM</div>
+        <div>
+          <div class="who">Deborah &amp; Robert (Dan) Mahaffy</div>
+          <div class="role">Parents of Leslie Mahaffy</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-adams" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Tim,</p>
+        <p>I wanted to write you a short note to try to start to say thank you. I say &ldquo;start&rdquo; because I'll spend the rest of my life repaying your generosity in words and deeds. As stacked as the deck was against us, I remain convinced that nobody else could have accomplished the win that you secured at the hearing before the Court of Arbitration for Sport (CAS) &ndash; as you know, the sports world buzzed at the appeal verdict, particularly the way you were able to convey to the CAS panel the need to act in fairness, and to follow the law.</p>
+        <p>I spent most of my life travelling the world, racing for Canada &ndash; and have rarely been so joyful as on those rare and magical days when my efforts were enough to see the maple leaf flown and hear Oh Canada played; to have heard the sound of celebration from the crowd, and the sound of support from those who helped me on my journey. As you know, the consequences of an anti-doping charge can be devastating, and career-ending for an athlete; there were many dark days for me during the legal process.</p>
+        <p>The energy of your efforts was a light during those difficult times, and your tireless work ended with a complete vindication for me, putting me &ldquo;back on track&rdquo; in time to race at the Paralympics in Beijing, giving me the chance to make my best efforts for myself, and my country.</p>
+        <p>Thank you for making that sound of support in my life. Thank you for rescuing my athletic career. Thank you for giving me my life back. Thank you most of all for your friendship and humanity throughout.</p>
+        <p>Your friend,<br/>Jeff Adams</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">JA</div>
+        <div>
+          <div class="who">Jeff Adams</div>
+          <div class="role">Paralympic Gold Medallist &middot; World Champion</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-rosenzweig" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>It is so difficult to find words that are worthy of one so eminent and exceptional as Tim Danson. With this thought in mind, we share our Testimonial with you, the reader.</p>
+        <p>There are some few unique and awesome forces in this life that are so remarkable &mdash; the only words that adequately describe them are their own names. Tim Danson.</p>
+        <p>In July of 2002, our beloved David was murdered. When we were faced with an act of barbarism &mdash; nihilism so menacing it threatened to drown us in our grief, fear, trauma and tears &mdash; Tim came forward to stand as contrast. A mighty contrast was needed &mdash; and Tim put out his hand, his heart and his professionalism.</p>
+        <p>He has never pulled his hand back, nor his heart, nor his professionalism.</p>
+        <p>Tim declares to us: There is meaning, there is light and right. Evil can't abide. Against evil, we will fight together.</p>
+        <p>Tim is our safe place in an unsafe and unstable world.</p>
+        <p>Tim tells us that one day the sun will rise on a world of goodness. He tells us this with his very life.</p>
+        <p>Tim is a man of greatness, integrity, courage, compassion, benevolence and altruism &mdash; at their finest.</p>
+        <p>He is a remarkably unique and awesome force: Tim Danson.</p>
+        <p>Tim, words will never adequately describe the breadth and depth of gratitude in our hearts for you. Our gratitude and admiration are immeasurable and infinite.</p>
+        <p>May God's Blessings be upon you.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">CR</div>
+        <div>
+          <div class="who">Chavi Rosenzweig &amp; Family</div>
+          <div class="role">Wife, children, brothers and sisters of David Rosenzweig</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-leone" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Our lawyer, Tim Danson worked tirelessly to prepare this case for trial which was scheduled to begin on October 24, 2011. I can tell you that this was no small task, literally thousands of documents, gut wrenching photos of the shooting and hundreds of hours spent piecing together the last days of an officer's life. For those who don't know Tim Danson, he has a long history with our service and defending our members. He has been with us from the beginning and there was no better person to present this case.</p>
+        <p style="font-size: 13px; opacity: 0.75; font-style: normal; margin-top: 24px;">&mdash; Detective Sergeant Mike Leone, as part of an open letter to the Toronto Police Association published in the June 2011 Tour of Duty Magazine.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">ML</div>
+        <div>
+          <div class="who">Det. Sgt. Mike Leone</div>
+          <div class="role">Toronto Police Service</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-baylis" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Over the course of 16 years my family and I have developed a profound respect and admiration for Tim Danson, our lawyer. From the moment we met Tim we knew that he was difference from your &ldquo;typical&rdquo; lawyer, his dedication, determination, and attention to detail has left us forever in his debt. Few lawyers take a personal interest in the cause of their client, and it is a fact that Tim poured his heart and soul into this action that places him in a class of litigators all his own. Tim never swayed in his dedication to our cause, and fought for us as though Todd were a member of his own family or at the very least, he was a member of ours. It is for these reasons, and others we cannot even begin to put into words that we wish to offer our most sincere and deepest thanks to Tim.</p>
+        <p style="font-size: 13px; opacity: 0.75; font-style: normal; margin-top: 24px;">&mdash; The family of murdered police officer, Todd Baylis in an open letter to the Toronto Police Association published in the June 2011 Tour of Duty Magazine.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">TB</div>
+        <div>
+          <div class="who">The Baylis Family</div>
+          <div class="role">Family of Police Officer Todd Baylis</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-zoricic" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Where to start &hellip; that dreadful day, March 10th 2012, when our world crumbled into pieces.</p>
+        <p>We knew Tim for many years as a member of the Craigleith Ski Club and could never have imagined that our destiny would get us close together over something so tragic&hellip; the loss of our son and brother. We first spoke to Tim to get his perspective on what had gone wrong and whether there could be lessons learned from this tragedy so that no other family would have to go through this. Tim was a friend who listened; he was a parent who understood; he was a lawyer who analyzed &hellip; We connected. Tim, with his amazing sensitivity, humanity, empathy and ability to convey complex information in simple ways, helped us to focus on what we all believed to be the only good that could come from something so bad &ndash; improving the safety of the sport for other athletes.</p>
+        <p>Needless to say, we knew that the legal fees associated with work of this nature would be enormous and not something that we would be able to afford. Tim felt the pain in our hearts and told us that he would help us free of charge, regardless of how extensive the work was, even if it resulted in a full trial. At a time of enormous grief and despair and when we were most vulnerable, Tim promised us that he would work with us to expose the errors that led to Nik's death and make sure that there were important lessons to be learned, to make sure such that a tragedy would never happen again; that silence and indifference would not be Nik's legacy, but rather positive, meaningful and constructive change to ensure skier safety would be Nik's legacy. The endless hours, commitment and dedication that followed to effect a positive outcome would have stopped many, but not Tim.</p>
+        <p>This journey has connected us forever, and this connection is beyond being extremely impressed with Tim&hellip;. In a highly specialized legal industry, Tim definitely stands out with his high-energy, honesty, passion for justice, and dedication to what is right and fair. Tim stands out with his analytical, insightful and strategic mind. But above all of this, is his heart and passion&hellip;. We knew we were tackling a huge undertaking of getting the sport regulations changed based on lessons learned so that no other similar tragedy would occur again. Tim never gave up. He kept his word and so much more. Tim has given us constant support in forcing a critically important conversation about lessons to be learned and effective change. Tim always encouraged us, particularly in moments of weakness and great sadness, to keep the faith and to focus on Nik's legacy; a legacy which stands for issues that are important to athletes and to the ski community who have been desperate for systemic and attitudinal changes to make the sport safer.</p>
+        <p>Tim has also helped with shaping the Nik Zoricic Foundation's mandate and direction. NZ Foundation will focus on improving the safety of the sport over the many years to come. Tim's input has given us the opportunity to challenge our assumptions and to look at the mandate from different perspectives.</p>
+        <p>From a personal point of view, we see Tim as our extended family now. It has been a very enriching experience in the most tragic circumstances imaginable. Thank you Tim from the bottom of our heart, not only for what you have done for us, but also for the sport of skiing and the athletes that continue to work hard in competing and proudly representing their countries in the international circuit.</p>
+        <p>With warmest regards,<br/>Bebe, Silvia and Kat Zoricic</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">BZ</div>
+        <div>
+          <div class="who">Bebe, Silvia and Kat Zoricic</div>
+          <div class="role">Parents and sister to International Canadian Ski Cross Champion, Nik Zoricic</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-stephenson" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Dear Tim,</p>
+        <p>It has now been more than three decades since that Father's Day weekend in 1988 when we tragically lost our 11 year old son Christopher and, as yet another &ldquo;anniversary&rdquo; of that time approaches, Anna and I are reminded of the success of our &ldquo;never again&rdquo; advocacy and efforts to bring about systemic changes in the judicial system.</p>
+        <p>We are convinced these changes would not have occurred had it not been for your dedication, commitment and hard work. From the very beginning it was clear to us that you recognized both our pain and heartache as well as our desire to make some sense of what had happened. We felt connected to you and believed the connection was mutual.</p>
+        <p>From the very early days, and as the legal process slowly moved along, we witnessed your professionalism, extensive legal experience, and above all that, your commitment to fairness and the law. Throughout our long and difficult journey, you conducted yourself in an highly principled manner, and with great dignity and integrity. While at times under pressure, your deportment throughout had a positive and confident impact on the courtroom. We could not have had better representation both before and throughout the five and one half month long Inquest. You successfully mounted an intense and unparalleled examination of Canadian correctional and parole systems and the provincial mental health processes and how each contributed to the events leading to Christopher's death.</p>
+        <p>Our early efforts to find suitable legal assistance to represent us at the inquest did not go well. One firm we approached told us point blank &ldquo;from the way you're dressed, you can't afford our fees&rdquo;. That attitude, and the likely prospect of having to come up with a hefty retainer, shook our confidence in the likelihood that we would be able have proper legal representation to fulfill our role as parties of standing into our son's death.</p>
+        <p>Yet you were committed to our cause, and without judgment you took our case on without a retainer, and without any guarantee of payment. In fact, a number of months passed before the question of your legal fees would even be raised with us. In addition to remortgaging our home, we mounted a &ldquo;go fund me&rdquo; button-campaign to initially help with our legal expenses. The fundraising effort was combined with a public letter writing initiative to mount public pressure on the Federal Government for our legal fees.</p>
+        <p>But it would not be for some 10 months after you began your legal preparation, and then only after the Inquest jury went on record about the significant contribution our presence made to the success of the Inquest, and demanded the Federal Government pay our legal fees because, really it was the right thing to do. That news conference was unprecedented.</p>
+        <p>Tim, notwithstanding the financial hardship the funding created for you and your family, you never gave an inch: your commitment and hard work never faltered.</p>
+        <p>The Inquest drew to a conclusion in mid-January 1993 and it marked a fundamental turning point for reform of the justice system and protection of communities in Canada, and Ontario in particular. For the record, Christopher's Law (Sex Offender Registry) 2000, proclaimed in 2001, the federal Sex Offender Information Act, three years later, and the Long Term Offender Legislation, created in 1997, represent very significant and lasting outcomes, and stand as testimony to our forged desire to produce meaning from Christopher's death. Other significant administrative changes of the 1993 Inquest include the sharing of information between Federal and Provincial Correctional Institutions and Provincial Mental Health Institutions.</p>
+        <p>It would be a grave oversight not to acknowledge multiple &ldquo;first-evers&rdquo; of the Inquest. For one, the Jury's decision to call for an annual &ldquo;report card&rdquo;. For another, one only has to review the number of the Inquest recommendations which were successfully implemented in short order. Another major recommendation from the Inquest Jury was for the government not to proclaim the capping provisions of the Criminal Code.</p>
+        <p>Anna and I are extremely proud of what we have accomplished together in Christopher's memory, and we want you to know how grateful we are to you and your never-ending commitment to our cause. We are equally grateful for the special friendship that developed between us and continues to this day.</p>
+        <p>On a very personal note, not too long before his death Christopher had told us proudly of his goal to become a lawyer. And had life turned out differently and he had continued successfully in that direction, Anna and I would like to think he would have been at least as good a person and as fine a lawyer as you have proven to us.</p>
+        <p>Yours very truly,<br/>Jim &amp; Anna Stephenson</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">JS</div>
+        <div>
+          <div class="who">Jim &amp; Anna Stephenson</div>
+          <div class="role">Parents of Christopher Stephenson &middot; Christopher's Law</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-shawn" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>When my elderly father suffered a serious head injury after a bad car accident, our family was suddenly faced with months of hospitalization, rehabilitation, and uncertainty. We knew it would be an uphill battle &mdash; not only because my father had been jaywalking, but also because he had significant pre-existing health issues. Notwithstanding the fight we had ahead of us, not once did Marjan make us feel discouraged. She told us to simply focus on my father and let her do the worrying for us.</p>
+        <p>From the outset, Marjan approached the case with care, remained personally available whenever we needed her, and kept my brother and me informed at every stage. We trusted her completely and always felt confident that she was fighting for my father's best interests.</p>
+        <p>We are so grateful we chose Marjan to help carry us through such a difficult time.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">SF</div>
+        <div>
+          <div class="who">Shawn F.</div>
+          <div class="role">Catastrophic Personal Injury &middot; Family Case</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-milad" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Marjan Delavar was a beacon of hope for my family during one of the most difficult periods of our lives, when my father suffered catastrophic head injuries after being struck by a TTC streetcar. At a time when our options appeared limited and the likelihood of success seemed nearly impossible, Marjan stood by us with unwavering dedication.</p>
+        <p>When we had lost hope and felt overwhelmed by the tragedy, Marjan and her team treated us with genuine care and compassion, advocating for us as though we were members of their own family.</p>
+        <p>The outcome of this case carried life-altering consequences for our family and would have had a profound impact on the quality of life my dad lived. Knowing what was at stake, Marjan fought tirelessly for the result my dad deserved.</p>
+        <p>A decade and a half later, my family and I will remain eternally grateful for her service and dedication, and wholeheartedly recommend her.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">MB</div>
+        <div>
+          <div class="who">Milad B.</div>
+          <div class="role">Catastrophic Personal Injury &middot; TTC Collision</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-hesam" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>After a devastating head-on collision at highway speed, my wife and I were left facing serious injuries, a long and painful course of rehabilitation, and the frightening realization that the future of our careers may have been changed forever. We retained Marjan Delavar, who guided us through every stage of the process and built the case from the ground up, presenting a strong and compelling case at the mediation three years later.</p>
+        <p>Throughout the entire process, Marjan encouraged us to remain patient and hopeful while continuing to prepare the case with dedication and professionalism. The commitment Marjan made when she first met us at the hospital never wavered. She stood by us through one of the most difficult periods of our lives, and her experience, professionalism, and genuine support made us feel that we were never alone.</p>
+        <p>We would not hesitate to recommend her and her professional team.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">HM</div>
+        <div>
+          <div class="who">Hesam M.</div>
+          <div class="role">Personal Injury &middot; Highway Collision</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-hamed" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>Finding Marjan was extremely fortuitous in a moment we didn't know who to trust. In a moment of reckless disregard by a driver, my father, a vibrant 96-year-old man on his way home, was involved in an accident that resulted in him being bed ridden for a year and wheelchair bound for the rest of his life. This was a low point for our family not knowing what to do. We were getting a run around, and not knowing how the system worked were completely lost.</p>
+        <p>Marjan immediately made an impression on my father and mother and took complete charge. She contacted the appropriate people, giving the family time to care for my father. At every step, Marjan was present and completely available to our questions and eased our concerns. Even after the successful outcome of our case, she was still available whenever we needed her counsel. After my father was discharged from the hospital we thought we had survived the hardship but were beset by the shortcomings of the facility in charge of my father's care whose negligence further aggravated his injuries. Marjan stepped in again and saved us the heartache of dealing with the second claim.</p>
+        <p>Marjan was more than capable of managing the complex issues with both cases with complete professionalism and treated my parents with dignity and care, every step of the way.</p>
+        <p>I still contact Marjan to ask for her counsel and opinion. I highly recommend her to anyone.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">HM</div>
+        <div>
+          <div class="who">Hamed M.</div>
+          <div class="role">Catastrophic Personal Injury &middot; Elderly Family Case</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_Light.svg" alt="Danson Delavar LLP" class="footer-logo-img" />
+  <ul class="footer-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#advocacy">Practice</a></li>
+    <li><a href="index.html#team">Partners</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">&copy; 2026 Danson Delavar LLP. All rights reserved.</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const nav = document.getElementById('site-nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
+  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  /* ── Testimonial modal open/close ── */
+  (function initTestModals() {
+    let lastFocused = null;
+
+    function open(id) {
+      const m = document.getElementById(id);
+      if (!m) return;
+      lastFocused = document.activeElement;
+      m.classList.add('open');
+      m.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      const closeBtn = m.querySelector('.test-modal-close');
+      if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
+    }
+    function close(m) {
+      m.classList.remove('open');
+      m.setAttribute('aria-hidden', 'true');
+      if (!document.querySelector('.test-modal.open')) document.body.classList.remove('modal-open');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    document.querySelectorAll('[data-open-test]').forEach(el => {
+      if (!el.querySelector('.quote-card-cta')) {
+        const cta = document.createElement('span');
+        cta.className = 'quote-card-cta';
+        cta.setAttribute('aria-hidden', 'true');
+        cta.innerHTML = 'Read full testimonial <span class="cta-arrow">&rarr;</span>';
+        el.appendChild(cta);
+      }
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        open(el.getAttribute('data-open-test'));
+      });
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(el.getAttribute('data-open-test'));
+        }
+      });
+    });
+    document.querySelectorAll('[data-close-test]').forEach(el => {
+      el.addEventListener('click', () => {
+        const m = el.closest('.test-modal');
+        if (m) close(m);
+      });
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const openM = document.querySelector('.test-modal.open');
+      if (openM) close(openM);
+    });
+  })();
+</script>
+
+</body>
+</html>

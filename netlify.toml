@@ -1,0 +1,19 @@
+# Danson Delavar LLP — static site. Repo root is the publish dir; no build step.
+[build]
+  publish = "."
+
+# Security headers — applied to every response.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# Long-cache the fingerprintable static assets.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

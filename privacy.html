@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Danson Delavar LLP</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23F2EDE6'/><text x='32' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%23424142' letter-spacing='-1'>d</text><text x='44' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%2375261F' letter-spacing='-1'>d</text><line x1='14' y1='52' x2='50' y2='52' stroke='%2375261F' stroke-width='1.5'/></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --charcoal: #2A2A2A;
+      --gray-warm: #424142;
+      --crimson: #75261F;
+      --crimson-light: #8C3328;
+      --cream: #F2EDE6;
+      --slate: #E5E1D8;
+      --off-white: #F8F5F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* A11y: visible keyboard focus ring (Web Interface Guidelines / UI-UX Pro Max — accessibility priority 1).
+       :where() keeps specificity 0 so existing element-specific focus styles still win. */
+    :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+      outline: 2px solid #C24A3F;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    :where(a, button, [tabindex]) { -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+    /* ─── NAV (centered masthead, light variant) ─── */
+    #site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: 88px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      column-gap: 56px;
+      padding: 0 56px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+      transition: height 0.4s ease;
+    }
+    #site-nav::after {
+      content: '';
+      position: absolute;
+      left: 56px; right: 56px; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(117,38,31,0.18) 18%, rgba(117,38,31,0.18) 82%, transparent);
+    }
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      white-space: nowrap;
+    }
+    .nav-logo .danson { color: var(--gray-warm); }
+    .nav-logo .delavar { color: var(--crimson); }
+    .nav-logo .llp-mark {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: rgba(42,42,42,0.45);
+      margin-left: 12px;
+      align-self: center;
+      padding-top: 4px;
+    }
+    .nav-logo img {
+      display: block;
+      height: 38px;
+      width: auto;
+      transition: height 0.4s ease;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links.nav-left  { justify-content: flex-end; }
+    .nav-links.nav-right { justify-content: flex-start; }
+    .nav-links a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: 0;
+      width: 0; height: 1px;
+      background: var(--crimson);
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-links a:hover { color: var(--crimson); }
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; left: 0; }
+    .nav-links a.active { color: var(--crimson); }
+
+    /* ─── PAGE BANNER ─── */
+    .page-banner {
+      position: relative;
+      padding: 168px 56px 88px;
+      background:
+        radial-gradient(120% 100% at 20% 30%, rgba(117,38,31,0.22) 0%, transparent 55%),
+        radial-gradient(100% 80% at 85% 90%, rgba(0,0,0,0.55) 0%, transparent 60%),
+        linear-gradient(165deg, #1a1a1a 0%, #0e0e0e 55%, #161010 100%);
+      color: #fff;
+      overflow: hidden;
+    }
+    .page-banner::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .banner-inner {
+      position: relative; z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .banner-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: #E8AA9C;
+      margin-bottom: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .banner-eyebrow::before {
+      content: '';
+      width: 36px; height: 1px;
+      background: #E8AA9C;
+    }
+    .banner-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(44px, 6vw, 84px);
+      letter-spacing: 0.04em;
+      line-height: 1.04;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      position: relative;
+      display: inline-block;
+    }
+    .banner-title::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -14px;
+      width: 72px; height: 1px;
+      background: #E8AA9C;
+    }
+    .banner-lede {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(16px, 1.6vw, 20px);
+      line-height: 1.6;
+      color: rgba(255,255,255,0.72);
+      max-width: 680px;
+    }
+
+    /* ─── LEGAL DOCUMENT BODY ─── */
+    .legal-body {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 84px 56px 120px;
+    }
+    .legal-meta {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 40px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(117,38,31,0.18);
+    }
+    .legal-intro {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.8;
+      color: #3a3a3a;
+      margin-bottom: 16px;
+    }
+    .legal-section { margin-top: 50px; }
+    .legal-section h2 {
+      font-family: 'Cinzel', serif;
+      font-weight: 500;
+      font-size: 21px;
+      letter-spacing: 0.02em;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .legal-section h2 .num {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--crimson);
+      flex: 0 0 auto;
+    }
+    .legal-section p {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #4a4a4a;
+      margin-bottom: 14px;
+    }
+    .legal-section ul { list-style: none; margin: 14px 0 18px; padding: 0; }
+    .legal-section li {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #4a4a4a;
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+    }
+    .legal-section li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.62em;
+      width: 5px; height: 5px;
+      transform: rotate(45deg);
+      background: rgba(117,38,31,0.55);
+    }
+    .legal-section a {
+      color: var(--crimson);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(117,38,31,0.3);
+      transition: border-color 0.25s ease;
+    }
+    .legal-section a:hover { border-color: var(--crimson); }
+    .legal-contact {
+      margin-top: 26px;
+      padding: 30px 34px;
+      background: var(--cream);
+      border-left: 3px solid var(--crimson);
+    }
+    .legal-contact p {
+      margin-bottom: 4px;
+      font-size: 15px;
+      color: #3a3a3a;
+    }
+    .legal-contact .name {
+      font-family: 'Cinzel', serif;
+      font-size: 16px;
+      color: var(--charcoal);
+      margin-bottom: 10px;
+    }
+
+    /* ─── FOOTER (shared) ─── */
+    footer {
+      background: #111;
+      padding: 28px 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo-img { display: block; height: 36px; width: auto; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .mobile-toggle span {
+      display: block; width: 24px; height: 1.5px;
+      background: var(--charcoal);
+    }
+
+    @media (max-width: 900px) {
+      #site-nav {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo toggle";
+        height: 68px;
+        padding: 0 24px;
+        column-gap: 0;
+      }
+      .nav-logo { grid-area: logo; font-size: 18px; }
+      .nav-logo .llp-mark { display: none; }
+      .mobile-toggle { grid-area: toggle; display: flex; }
+      .nav-links.nav-left, .nav-links.nav-right {
+        display: none;
+        margin: 0; padding: 0; gap: 0;
+      }
+      #site-nav.menu-open {
+        grid-template-areas:
+          "logo toggle"
+          "left left"
+          "right right";
+        grid-template-rows: 68px auto auto;
+        height: auto;
+      }
+      #site-nav.menu-open .nav-links.nav-left  { grid-area: left;  display: flex; flex-direction: column; padding: 8px 0 0 0; }
+      #site-nav.menu-open .nav-links.nav-right { grid-area: right; display: flex; flex-direction: column; padding: 0 0 16px 0; }
+      #site-nav.menu-open .nav-links a { padding: 14px 32px; font-size: 13px; letter-spacing: 0.24em; display: block; }
+      #site-nav.menu-open .nav-links a::after { display: none; }
+      .page-banner { padding: 132px 24px 64px; }
+      .legal-body { padding: 56px 24px 80px; }
+      footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+      .footer-links { justify-content: center; flex-wrap: wrap; }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 1000;
+      background: var(--crimson); color: #fff;
+      padding: 10px 18px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    }
+    .skip-link:focus-visible { left: 8px; top: 8px; outline: 2px solid #fff; outline-offset: 2px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MOBILE OPTIMIZATION — phones (≤600px). APPEND-ONLY.
+       Everything ≥601px (tablet + desktop) is untouched.
+       ══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      .page-banner { padding: 112px 22px 56px; }
+      .banner-title { font-size: clamp(38px, 12vw, 60px); }
+      .banner-lede { font-size: 15px; }
+      .legal-body { padding: 48px 22px 72px; }
+      .legal-intro { font-size: 16px; }
+      .legal-section { margin-top: 40px; }
+      .legal-section h2 { font-size: 19px; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- NAV (centered masthead) -->
+<nav id="site-nav">
+  <ul class="nav-links nav-left">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#advocacy">Practice</a></li>
+    <li><a href="index.html#team">Partners</a></li>
+  </ul>
+  <a href="index.html" class="nav-logo" aria-label="Danson Delavar LLP">
+    <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_90_Burgundy-01_90.svg" alt="Danson Delavar LLP" />
+  </a>
+  <ul class="nav-links nav-right">
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<span id="main-content" tabindex="-1"></span>
+
+<!-- BANNER -->
+<section class="page-banner">
+  <div class="banner-inner">
+    <p class="banner-eyebrow">Legal</p>
+    <h1 class="banner-title">Privacy Policy</h1>
+    <p class="banner-lede">
+      Danson Delavar LLP is committed to protecting the privacy and confidentiality of the personal information entrusted to us in the course of providing legal services.
+    </p>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="legal-body">
+  <p class="legal-meta">Effective June 2026</p>
+
+  <p class="legal-intro">
+    Danson Delavar LLP (&ldquo;Danson Delavar,&rdquo; &ldquo;the firm,&rdquo; &ldquo;we,&rdquo; or &ldquo;us&rdquo;) respects the importance of privacy and the sensitivity of personal information. As lawyers, we have a professional obligation under the rules of the Law Society of Ontario to hold in strict confidence all information we acquire within a lawyer-client relationship.
+  </p>
+  <p class="legal-intro">
+    This Privacy Policy explains how we collect, use, disclose, and safeguard personal information, in a manner consistent with our professional obligations and with applicable privacy legislation, including the <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA). It applies to personal information collected through our practice and through this website.
+  </p>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">01</span> Your Privacy Rights</h2>
+    <p>We are committed to protecting the personal information of our clients, prospective clients, website visitors, and others with whom we deal. We collect, use, and disclose personal information only for purposes that a reasonable person would consider appropriate in the circumstances, and only as permitted or required by law and our professional duties.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">02</span> Personal Information We Collect</h2>
+    <p>The personal information we collect depends on the nature of our relationship with you and the legal services we provide. It may include:</p>
+    <ul>
+      <li>Identifying and contact information, such as your name, address, telephone number, and email address;</li>
+      <li>Information necessary to provide legal services, including details of your legal matter, financial and billing information, and information required to verify your identity;</li>
+      <li>Information about third parties relevant to a matter — such as directors, officers, employees, witnesses, experts, or opposing parties — which we may receive in the course of a retainer;</li>
+      <li>Technical information collected automatically when you visit this website, such as your IP address, browser type, and pages viewed.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">03</span> How We Collect Personal Information</h2>
+    <p>Wherever reasonable and practicable, we collect personal information directly from you — verbally or in writing — when you retain the firm, contact us, or use this website. In the course of providing legal services, we may also collect personal information from other sources, including courts and tribunals, government agencies, financial institutions, insurers, other counsel, and publicly available records.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">04</span> Consent</h2>
+    <p>By providing us with personal information, you consent to its collection, use, and disclosure in accordance with this Policy. Depending on the sensitivity of the information, your consent may be express or implied. You may withdraw or refuse your consent at any time, subject to legal and contractual restrictions and reasonable notice. Please note that withdrawing consent may limit or prevent our ability to act for you.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">05</span> How We Use Personal Information</h2>
+    <p>We use personal information to:</p>
+    <ul>
+      <li>Provide legal advice and representation, and otherwise carry out the services for which we have been retained;</li>
+      <li>Establish and verify identity and manage our relationship with you;</li>
+      <li>Administer accounts, process billing, and maintain our records;</li>
+      <li>Meet our professional, regulatory, and legal obligations;</li>
+      <li>Respond to inquiries submitted through this website or otherwise, and, where appropriate, send communications about the firm.</li>
+    </ul>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">06</span> Disclosure of Personal Information</h2>
+    <p>We do not sell personal information. We may disclose personal information in the course of representing you, or where authorized or required to do so — for example: with your consent; to third-party service providers who assist us in operating the firm and who are bound by appropriate confidentiality obligations; to courts, tribunals, or regulatory authorities; or where required or permitted by law. Information subject to solicitor-client privilege is protected and is not disclosed except as permitted by law.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">07</span> Retention &amp; Security</h2>
+    <p>Personal information is retained only as long as necessary to fulfil the purposes for which it was collected and to meet our professional and legal obligations. We maintain physical, organizational, and technological safeguards appropriate to the sensitivity of the information to protect it against loss, theft, and unauthorized access, use, or disclosure.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">08</span> Our Website</h2>
+    <p>This website may use cookies and similar technologies to support its functionality and to help us understand how the site is used. Most browsers allow you to refuse or delete cookies; doing so may affect certain features of the site. This website may also contain links to external sites that are not operated by the firm and are not governed by this Policy; we encourage you to review the privacy practices of any website you visit.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">09</span> Keeping Information Accurate</h2>
+    <p>We endeavour to keep personal information as accurate, complete, and current as necessary for the purposes for which it is used. Please notify us of any change to your information during the course of a retainer so that we may update our records.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">10</span> Accessing Your Personal Information</h2>
+    <p>You may request access to the personal information we hold about you, and request that we correct any inaccuracies. We will respond to such requests as required by law. In certain circumstances — including where information is subject to solicitor-client privilege, would reveal personal information about another individual, or is otherwise exempt — we may not be able to provide access.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">11</span> Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or in applicable law. The current version will always be posted on this website, with its effective date noted above. We encourage you to review it periodically.</p>
+  </div>
+
+  <div class="legal-section reveal">
+    <h2><span class="num">12</span> Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, or wish to access or correct your personal information, please contact our Privacy Officer:</p>
+    <div class="legal-contact">
+      <p class="name">Danson Delavar LLP — Privacy Officer</p>
+      <p>20 Eglinton Avenue West, Suite 1902</p>
+      <p>Toronto, ON&nbsp;&nbsp;M4R 1K8</p>
+      <p>Telephone: <a href="tel:4169292200">416-929-2200</a></p>
+      <p>Email: <a href="mailto:info@ddlitigators.com">info@ddlitigators.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_Light.svg" alt="Danson Delavar LLP" class="footer-logo-img" />
+  <ul class="footer-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#advocacy">Practice</a></li>
+    <li><a href="index.html#team">Partners</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">&copy; 2026 Danson Delavar LLP. All rights reserved.</p>
+</footer>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const nav = document.getElementById('site-nav');
+  toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
+  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

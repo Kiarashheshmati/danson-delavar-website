@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danson Delavar LLP — Toronto Litigation Boutique</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23F2EDE6'/><text x='32' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%23424142' letter-spacing='-1'>d</text><text x='44' y='42' text-anchor='middle' font-family='Cinzel, serif' font-size='30' font-weight='500' fill='%2375261F' letter-spacing='-1'>d</text><line x1='14' y1='52' x2='50' y2='52' stroke='%2375261F' stroke-width='1.5'/></svg>" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Josefin+Sans:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --charcoal: #2A2A2A;
+      --gray-warm: #424142;
+      --crimson: #75261F;
+      --crimson-light: #8C3328;
+      --crimson-bright: #C24A3F;
+      --crimson-soft: #DA8A7C;
+      --cream: #F2EDE6;
+      --slate: #E5E1D8;
+      --off-white: #F8F5F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* A11y: visible keyboard focus ring (Web Interface Guidelines / UI-UX Pro Max — accessibility priority 1).
+       :where() keeps specificity 0 so existing element-specific focus styles still win. */
+    :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+      outline: 2px solid #C24A3F;
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+    :where(a, button, [tabindex]) { -webkit-tap-highlight-color: transparent; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--charcoal);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    .font-display { font-family: 'Cinzel', serif; }
+
+    h1, h2, h3, h4, h5 { font-family: 'Cinzel', serif; }
+
+    /* ─── NAV (centered masthead) ─── */
+    #site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 88px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      column-gap: 56px;
+      padding: 0 56px;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, height 0.4s ease;
+    }
+
+    #site-nav::after {
+      content: '';
+      position: absolute;
+      left: 56px; right: 56px; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14) 18%, rgba(255,255,255,0.14) 82%, transparent);
+      transition: background 0.4s ease;
+    }
+
+    #site-nav.scrolled {
+      height: 76px;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    }
+
+    #site-nav.scrolled::after {
+      background: linear-gradient(90deg, transparent, rgba(117,38,31,0.18) 18%, rgba(117,38,31,0.18) 82%, transparent);
+    }
+
+    .nav-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      transition: color 0.3s, font-size 0.4s ease;
+      white-space: nowrap;
+    }
+
+    #site-nav.scrolled .nav-logo {
+      color: var(--charcoal);
+      font-size: 22px;
+    }
+
+    .nav-logo .danson { color: rgba(255,255,255,0.94); transition: color 0.3s; }
+    .nav-logo .delavar { color: #C24A3F; transition: color 0.3s; }
+    #site-nav.scrolled .nav-logo .danson { color: var(--gray-warm); }
+    #site-nav.scrolled .nav-logo .delavar { color: var(--crimson); }
+
+    .nav-logo .llp-mark {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      color: rgba(255,255,255,0.5);
+      margin-left: 12px;
+      align-self: center;
+      padding-top: 4px;
+    }
+    #site-nav.scrolled .nav-logo .llp-mark { color: rgba(42,42,42,0.45); }
+
+    /* Logo image variants in nav (swap on scroll / on light pages) */
+    .nav-logo img {
+      display: block;
+      height: 40px;
+      width: auto;
+      transition: height 0.4s ease, opacity 0.3s ease;
+    }
+    #site-nav.scrolled .nav-logo img { height: 34px; }
+    .nav-logo .logo-ivory    { display: block; }
+    .nav-logo .logo-burgundy { display: none; }
+    #site-nav.scrolled .nav-logo .logo-ivory    { display: none; }
+    #site-nav.scrolled .nav-logo .logo-burgundy { display: block; }
+    #site-nav.menu-open .nav-logo .logo-ivory    { display: none; }
+    #site-nav.menu-open .nav-logo .logo-burgundy { display: block; }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links.nav-left  { justify-content: flex-end; }
+    .nav-links.nav-right { justify-content: flex-start; }
+
+    .nav-links a {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      text-decoration: none;
+      position: relative;
+      padding: 6px 0;
+      transition: color 0.25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--crimson-light);
+      transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1), left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+      left: 0;
+    }
+
+    #site-nav.scrolled .nav-links a { color: var(--charcoal); }
+    .nav-links a:hover { color: #fff; }
+    #site-nav.scrolled .nav-links a:hover { color: var(--crimson); }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 640px;
+      overflow: hidden;
+      background: #0a0a0a;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    #hero-image {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/frame-shots/hero-pair.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      /* Editorial cinema B&W — pure greyscale, lifted contrast, brighter matte */
+      filter: grayscale(1) contrast(1.08) brightness(1.05);
+      /* Slow breathing drift — still image that feels alive */
+      animation: hero-drift 28s ease-in-out infinite alternate;
+      transform-origin: center 45%;
+      will-change: transform;
+    }
+
+    @keyframes hero-drift {
+      from { transform: scale(1.00); }
+      to   { transform: scale(1.04); }
+    }
+
+    /* Inner vignette — darker edges, lifted center, pulls focus to the figures */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background:
+        radial-gradient(65% 90% at 50% 38%, transparent 0%, rgba(0,0,0,0.36) 100%),
+        radial-gradient(140% 60% at 50% 50%, transparent 55%, rgba(0,0,0,0.32) 100%);
+      mix-blend-mode: multiply;
+    }
+
+    /* Film grain — subtle editorial texture over the portraits */
+    #hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      pointer-events: none;
+      opacity: 0.16;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    #hero-divider {
+      position: absolute;
+      top: 14%;
+      bottom: 14%;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        rgba(255,255,255,0.0) 6%,
+        rgba(255,255,255,0.18) 28%,
+        rgba(255,255,255,0.18) 72%,
+        rgba(255,255,255,0.0) 94%,
+        transparent 100%);
+      z-index: 5;
+    }
+    /* Top-of-hero nav-legibility gradient — protects nav text on busy photos */
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 140px;
+      z-index: 6;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 50%, transparent 100%);
+      pointer-events: none;
+    }
+
+
+    #hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0.40) 0%,
+        rgba(0,0,0,0.05) 30%,
+        rgba(0,0,0,0.05) 50%,
+        rgba(0,0,0,0.80) 85%,
+        rgba(0,0,0,0.90) 100%
+      );
+    }
+
+    #hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0 24px 56px;
+      width: 100%;
+    }
+
+    .hero-wordmark {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .hero-wordmark .danson {
+      color: rgba(220,218,213,0.92);
+      text-shadow: 0 2px 24px rgba(0,0,0,0.55);
+    }
+    .hero-wordmark .delavar {
+      color: #C24A3F;
+      text-shadow: 0 2px 28px rgba(117,38,31,0.45), 0 1px 0 rgba(0,0,0,0.4);
+    }
+
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .hero-rule .line {
+      height: 1px;
+      width: 120px;
+      background: linear-gradient(90deg, transparent, rgba(117,38,31,0.6));
+    }
+
+    .hero-rule .line.right {
+      background: linear-gradient(90deg, rgba(117,38,31,0.6), transparent);
+    }
+
+    .hero-rule .llp {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+    }
+
+    .hero-tagline {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: clamp(16px, 2vw, 22px);
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.02em;
+      margin-top: 28px;
+    }
+
+    .hero-logo {
+      display: block;
+      width: clamp(380px, 58vw, 760px);
+      height: auto;
+      margin: 0 auto;
+      filter: drop-shadow(0 2px 28px rgba(194,74,63,0.32)) drop-shadow(0 1px 0 rgba(0,0,0,0.4));
+    }
+
+
+    /* ─── SECTION LABEL (parallax banners) ─── */
+    .parallax-banner {
+      position: relative;
+      height: 220px;
+      background-size: cover;
+      background-position: center top;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .parallax-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .parallax-banner::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 36px;
+      width: 56px;
+      height: 1px;
+      background: var(--crimson);
+    }
+
+    .parallax-banner h1 {
+      position: relative;
+      z-index: 1;
+      font-family: 'Cinzel', serif;
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* ─── PREAMBLE — calm cream editorial statement under hero ─── */
+    #preamble {
+      background: var(--off-white);
+      padding: 96px 32px 88px;
+      text-align: center;
+      position: relative;
+    }
+    .preamble-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 0 0 36px;
+    }
+    .preamble-statement {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.4vw, 32px);
+      line-height: 1.5;
+      color: var(--charcoal);
+      max-width: 880px;
+      margin: 0 auto 48px;
+      letter-spacing: 0.01em;
+    }
+    .preamble-statement .accent { color: var(--crimson); font-style: normal; }
+    .preamble-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--crimson);
+      margin: 0 auto 32px;
+      opacity: 0.7;
+    }
+    .preamble-latin {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: rgba(42,42,42,0.55);
+    }
+    .preamble-latin .dot {
+      color: var(--crimson);
+      margin: 0 10px;
+      opacity: 0.8;
+    }
+    .preamble-gloss {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(42,42,42,0.4);
+      margin-top: 10px;
+      font-style: italic;
+    }
+    @media (max-width: 720px) {
+      #preamble { padding: 72px 24px 64px; }
+      .preamble-statement { font-size: 19px; line-height: 1.55; }
+    }
+
+    .about-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about-stat {
+      flex: 1;
+      padding: 0 32px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .about-stat:last-child { border-right: none; }
+
+    .about-stat-number {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 400;
+      color: #fff;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .about-stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+    }
+
+    /* ─── NOTABLE MATTERS ─── */
+    #notable-matters {
+      background: #1a1a1a;
+      padding: 80px 56px;
+    }
+
+    .notable-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .notable-header h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .notable-header p {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(18px, 2vw, 24px);
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .matters-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .matter-card {
+      background: rgba(255,255,255,0.03);
+      padding: 40px 40px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s;
+    }
+
+    .matter-card:hover {
+      background: rgba(255,255,255,0.06);
+    }
+
+    .matter-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 14px;
+    }
+
+    .matter-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(14px, 1.4vw, 17px);
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .matter-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ─── FIRM STATEMENT (cream) ─── */
+    .firm-statement {
+      background: var(--cream);
+    }
+
+    /* ─── CONTACT BAR ─── */
+    .contact-bar {
+      background: var(--off-white);
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .contact-icon-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding: 40px 16px;
+      text-align: center;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contact-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--crimson);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .contact-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: #111;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      line-height: 1.55;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--crimson); }
+
+    /* ─── PRACTICE AREAS (editorial numbered index) ─── */
+    .practice-areas-section {
+      background: var(--cream);
+      padding: 88px 56px 104px;
+      position: relative;
+    }
+    .practice-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .practice-intro {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(17px, 1.5vw, 21px);
+      font-weight: 300;
+      line-height: 1.7;
+      letter-spacing: 0;
+      color: var(--charcoal);
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 88px;
+      position: relative;
+    }
+    .practice-intro::after {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 1px;
+      background: var(--crimson);
+      margin: 36px auto 0;
+    }
+    .practice-list {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-top: 1px solid rgba(117,38,31,0.22);
+      border-left: 1px solid rgba(117,38,31,0.22);
+    }
+    /* Row 1: 3 cells each spanning 2 of 6 columns */
+    .practice-item:nth-child(1),
+    .practice-item:nth-child(2),
+    .practice-item:nth-child(3) { grid-column: span 2; }
+    /* Row 2: 2 cells each spanning 3 of 6 columns */
+    .practice-item:nth-child(4),
+    .practice-item:nth-child(5) { grid-column: span 3; }
+    .practice-item {
+      display: flex;
+      flex-direction: column;
+      padding: 40px 36px 44px;
+      border-bottom: 1px solid rgba(117,38,31,0.22);
+      border-right: 1px solid rgba(117,38,31,0.22);
+      transition: background-color 0.4s ease;
+      cursor: default;
+    }
+    .practice-item:hover {
+      background: rgba(117,38,31,0.025);
+    }
+    .practice-name {
+      padding-top: 0;
+    }
+    .practice-name h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(17px, 1.45vw, 22px);
+      font-weight: 500;
+      line-height: 1.22;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    .practice-name h2 .amp {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--crimson);
+      margin: 0 2px;
+    }
+    .practice-name .practice-pull {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--crimson);
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      margin-top: 14px;
+      padding-left: 14px;
+      border-left: 1.5px solid var(--crimson);
+    }
+    .practice-body {
+      padding-top: 12px;
+    }
+    .practice-body p {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.78;
+      color: #3a3a3a;
+      margin: 0;
+    }
+    /* Practice sub-areas — clean stacked index, one per line with a hairline diamond tick */
+    .practice-tags {
+      margin-top: 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.015em;
+      text-transform: none;
+      color: rgba(117,38,31,0.82);
+      line-height: 1.3;
+    }
+    .practice-tags > span:not(.sep) {
+      position: relative;
+      padding-left: 18px;
+    }
+    .practice-tags > span:not(.sep)::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.46em;
+      width: 5px;
+      height: 5px;
+      transform: rotate(45deg);
+      background: rgba(117,38,31,0.55);
+    }
+    /* Hide the inline · separators — terms now stack as a list */
+    .practice-tags .sep { display: none; }
+
+    /* ─── SCC PROOF BAND ─── */
+    .practice-proof {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+    .practice-proof::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .proof-inner {
+      display: grid;
+      grid-template-columns: 0.82fr 1fr;
+      align-items: center;
+      min-height: auto;
+      position: relative;
+      z-index: 1;
+    }
+    .proof-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 76px 56px;
+      position: relative;
+    }
+    /* Photo shown in full (uncropped) at roughly half its former size, with a caption */
+    .proof-figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 330px;
+    }
+    .proof-photo img {
+      display: block;
+      width: 100%;
+      max-width: 330px;
+      height: auto;
+      aspect-ratio: 960 / 1237;
+      object-fit: contain;
+      box-shadow: 0 22px 56px rgba(0,0,0,0.5);
+    }
+    .proof-caption {
+      margin-top: 18px;
+      max-width: 330px;
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 12.5px;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+    }
+    .proof-caption cite { font-style: italic; }
+    .proof-caption a {
+      color: #DA8A7C;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(213,133,151,0.45);
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .proof-caption a:hover { color: #fff; border-color: rgba(255,255,255,0.6); }
+    .proof-text {
+      padding: 80px 80px 80px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 760px;
+    }
+    .proof-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 15px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: #EBA597;
+      margin-bottom: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .proof-eyebrow::before {
+      content: '';
+      width: 52px;
+      height: 1px;
+      background: #EBA597;
+    }
+    .proof-quote {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(22px, 2.1vw, 30px);
+      line-height: 1.36;
+      letter-spacing: 0.012em;
+      color: #fff;
+      margin: 0 0 44px;
+    }
+    .proof-quote .accent {
+      color: #DA8A7C;
+      font-style: normal;
+    }
+    .proof-tribunals-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .proof-tribunals-label::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: rgba(196,85,80,0.5);
+    }
+    /* Two-column court list — uses the empty space, larger type, breathable */
+    .proof-tribunals {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      column-count: 2;
+      column-gap: 56px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.92);
+      line-height: 2.05;
+    }
+    .proof-tribunals li {
+      break-inside: avoid;
+      position: relative;
+      padding-left: 14px;
+    }
+    .proof-tribunals li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85em;
+      width: 6px;
+      height: 1px;
+      background: rgba(196,85,80,0.55);
+    }
+
+    @media (max-width: 900px) {
+      .practice-areas-section { padding: 64px 24px 80px; }
+      .practice-intro { margin-bottom: 64px; }
+      .practice-list {
+        grid-template-columns: 1fr;
+        border-left: none;
+      }
+      .practice-item,
+      .practice-item:nth-child(1),
+      .practice-item:nth-child(2),
+      .practice-item:nth-child(3),
+      .practice-item:nth-child(4),
+      .practice-item:nth-child(5) {
+        grid-column: auto;
+        padding: 32px 0;
+        border-right: none;
+      }
+      .practice-name h2 { font-size: 22px; }
+      .practice-body { padding-top: 8px; }
+      .practice-tags { font-size: 10.5px; letter-spacing: 0.2em; }
+
+      .proof-inner { grid-template-columns: 1fr; min-height: 0; }
+      .proof-photo { padding: 44px 24px 12px; }
+      .proof-figure, .proof-photo img, .proof-caption { max-width: 300px; }
+      .proof-text { padding: 40px 24px 56px; max-width: none; }
+    }
+
+    /* ─── TEAM ─── */
+    #team-section {
+      background: var(--cream);
+      padding: 80px 56px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 48px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .team-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team-photo-wrapper {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      background: #ccc;
+    }
+
+    .team-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 8%;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .team-card:hover .team-photo-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .team-info {
+      padding: 20px 0 0;
+    }
+
+    .team-name {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--crimson);
+    }
+
+    /* ─── CONTACT SECTION ─── */
+    #contact {
+      background: var(--charcoal);
+      padding: 80px 56px;
+    }
+
+    #contact h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(28px, 3vw, 40px);
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    #contact h2::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 1px;
+      background: #BE5A4E;
+      margin: 18px auto 0;
+    }
+    #contact .contact-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: #BE5A4E;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .form-field label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .form-field input,
+    .form-field textarea {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      padding: 10px 0;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      outline: none;
+      resize: none;
+      transition: border-color 0.25s;
+      -webkit-appearance: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-bottom-color: var(--crimson);
+    }
+
+    .form-field textarea { min-height: 120px; }
+
+    .form-submit {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.25s, border-color 0.25s, color 0.25s;
+    }
+
+    .form-submit:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+    }
+
+    .contact-details {
+      color: rgba(255,255,255,0.75);
+    }
+
+    .contact-details h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    .contact-detail-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .contact-detail-row svg {
+      width: 20px;
+      height: 20px;
+      stroke: #BE5A4E;
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-detail-row p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact-detail-row a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-detail-row a:hover { color: #fff; }
+
+    .get-directions-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #BE5A4E;
+      text-decoration: none;
+      border-bottom: 1px solid #BE5A4E;
+      padding-bottom: 3px;
+      transition: color 0.25s ease, border-color 0.25s ease, padding-right 0.3s ease;
+    }
+    .get-directions-link:hover {
+      color: #fff;
+      border-color: #fff;
+      padding-right: 6px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #111;
+      padding: 32px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .footer-logo-img {
+      display: block;
+      height: 38px;
+      width: auto;
+      filter: brightness(1.04);
+    }
+
+    .footer-logo {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-logo .delavar { color: var(--crimson); opacity: 0.8; }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+      margin: 0;
+    }
+    .footer-copy-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: #fff;
+      transition: background 0.3s;
+    }
+
+    #site-nav.scrolled .mobile-toggle span { background: var(--charcoal); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      #site-nav {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "logo toggle";
+        height: 68px;
+        padding: 0 24px;
+        column-gap: 0;
+      }
+      .nav-logo { grid-area: logo; font-size: 20px; }
+      .nav-logo .llp-mark { display: none; }
+      .mobile-toggle { grid-area: toggle; display: flex; }
+
+      .nav-links.nav-left,
+      .nav-links.nav-right {
+        display: none;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+      }
+
+      #site-nav.menu-open {
+        grid-template-areas:
+          "logo toggle"
+          "left left"
+          "right right";
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 68px auto auto;
+        height: auto;
+        background: rgba(255,255,255,0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      #site-nav.menu-open .nav-logo .danson { color: var(--gray-warm); }
+      #site-nav.menu-open .nav-logo .delavar { color: var(--crimson); }
+      #site-nav.menu-open .mobile-toggle span { background: var(--charcoal); }
+
+      #site-nav.menu-open .nav-links.nav-left {
+        grid-area: left;
+        display: flex;
+        flex-direction: column;
+        padding: 8px 0 0 0;
+      }
+      #site-nav.menu-open .nav-links.nav-right {
+        grid-area: right;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 16px 0;
+      }
+      #site-nav.menu-open .nav-links a {
+        color: var(--charcoal);
+        padding: 14px 32px;
+        font-size: 13px;
+        letter-spacing: 0.24em;
+        display: block;
+      }
+      #site-nav.menu-open .nav-links a::after { display: none; }
+
+      .practice-row,
+      .practice-row.alt {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .practice-image { height: 280px; }
+      .practice-text { padding: 40px 24px; }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        padding: 28px 24px;
+      }
+
+      .footer-links { justify-content: center; }
+
+      #team-section { padding: 60px 24px; }
+      #contact { padding: 60px 24px; }
+      #notable-matters { padding: 60px 24px; }
+      .matters-grid { grid-template-columns: 1fr; }
+      .about-stats { flex-direction: column; gap: 32px; }
+      .about-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 32px; }
+      .about-stat:last-child { border-bottom: none; }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── ABOUT-THE-FIRM GRID + EDITORIAL SIDEBAR ─── */
+    .firm-statement-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 80px;
+      align-items: stretch;
+    }
+    .firm-statement-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .firm-statement-closing {
+      padding-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+    .firm-statement-closing .closing-rule {
+      display: block;
+      width: 72px;
+      height: 1px;
+      background: var(--crimson);
+    }
+    .firm-statement-closing .closing-wordmark {
+      font-family: 'Cinzel', serif;
+      font-size: 34px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      margin: 0;
+      line-height: 1;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .firm-statement-closing .d-mark { color: var(--gray-warm); }
+    .firm-statement-closing .d-mark.accent { color: var(--crimson); }
+    .firm-statement-closing .llp-small {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.34em;
+      color: rgba(117,38,31,0.6);
+      margin-left: 10px;
+      padding-top: 4px;
+    }
+    .firm-statement-closing .closing-tagline {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: rgba(42,42,42,0.55);
+      margin: 0;
+    }
+    .firm-statement-closing .closing-logo {
+      display: block;
+      width: 360px;
+      max-width: 100%;
+      height: auto;
+      margin: 4px 0 6px;
+    }
+
+    .firm-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      padding-top: 4px;
+    }
+    .firm-partner-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .firm-partner-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: #1a1a1a;
+      position: relative;
+    }
+    .firm-partner-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22,1,0.36,1);
+    }
+    .firm-partner-card:hover .firm-partner-photo img {
+      transform: scale(1.035);
+    }
+    .firm-partner-meta {
+      padding: 18px 0 0;
+      text-align: center;
+    }
+    .firm-partner-name {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      margin: 0;
+    }
+    .firm-partner-rule {
+      width: 24px;
+      height: 1px;
+      background: var(--crimson);
+      margin: 10px auto;
+    }
+    .firm-partner-role {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 0;
+    }
+
+    .firm-stat-block {
+      margin-top: 16px;
+      padding: 28px 24px;
+      border-top: 1px solid rgba(117,38,31,0.22);
+      border-bottom: 1px solid rgba(117,38,31,0.22);
+      text-align: center;
+    }
+    .firm-stat-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 0 0 14px;
+    }
+    .firm-stat-figure {
+      font-family: 'Cinzel', serif;
+      font-size: 34px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      color: var(--charcoal);
+      margin: 0 0 12px;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+    }
+    .firm-stat-figure em {
+      font-style: normal;
+      font-size: 18px;
+      color: rgba(117,38,31,0.55);
+      font-weight: 300;
+    }
+    .firm-stat-figure .total {
+      color: var(--crimson);
+      font-weight: 500;
+      font-size: 44px;
+      margin-left: 4px;
+    }
+    .firm-stat-caption {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 0.02em;
+      color: #555;
+      margin: 0;
+    }
+
+    .firm-forums {
+      padding: 6px 4px 0;
+    }
+    .firm-forums-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 0 0 12px;
+    }
+    .firm-forums ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .firm-forums li {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      position: relative;
+      padding-left: 14px;
+    }
+    .firm-forums li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 6px;
+      height: 1px;
+      background: var(--crimson);
+    }
+
+    .firm-inscription {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 11px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: rgba(117,38,31,0.7);
+      text-align: center;
+      margin: 12px 0 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(117,38,31,0.18);
+    }
+    .firm-inscription span {
+      color: rgba(117,38,31,0.4);
+      margin: 0 4px;
+    }
+
+    @media (max-width: 900px) {
+      .firm-sidebar {
+        max-width: 420px;
+        margin: 48px auto 0;
+      }
+    }
+
+    /* ─── EDITORIAL LAYER (Round 4 polish) ─── */
+
+    /* Chapter mark — small Roman-numeral indicator in section corners */
+    .chapter-mark {
+      position: absolute;
+      top: 36px;
+      right: 56px;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      color: rgba(117,38,31,0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 2;
+    }
+    .chapter-mark::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: rgba(117,38,31,0.4);
+    }
+    .chapter-mark.on-dark {
+      color: #C24A3F;
+      font-weight: 500;
+    }
+    .chapter-mark.on-dark::before {
+      background: rgba(194,74,63,0.7);
+      width: 32px;
+    }
+
+    /* Drop cap on lead paragraph */
+    .drop-cap::first-letter {
+      font-family: 'Cinzel', serif;
+      font-size: 5.1em;
+      font-weight: 500;
+      float: left;
+      line-height: 0.92;
+      padding: 6px 12px 0 0;
+      color: var(--crimson);
+      letter-spacing: -0.02em;
+    }
+
+    /* Inline editorial pull-quote */
+    .pull-quote {
+      position: relative;
+      margin: 40px 0 36px;
+      padding: 0 0 0 28px;
+      font-family: 'Inter', sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      font-size: clamp(19px, 1.7vw, 24px);
+      letter-spacing: 0;
+      line-height: 1.5;
+      color: #707070;
+    }
+    .pull-quote::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 6px; bottom: 6px;
+      width: 2px;
+      background: var(--crimson-light);
+    }
+    .pull-quote em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--crimson-light);
+    }
+
+    /* Latin maxim — discreet legal inscription */
+    .maxim {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin: 0 auto 36px;
+      max-width: 520px;
+    }
+    .maxim .rule {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18) 30%, rgba(255,255,255,0.18) 70%, transparent);
+    }
+    .maxim .text {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 12px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      white-space: nowrap;
+    }
+    .maxim .text .dot {
+      color: rgba(194,74,63,0.7);
+      font-style: normal;
+      margin: 0 8px;
+      letter-spacing: 0;
+    }
+
+    /* Bio sub-sections (Education / Practice Areas / Affiliations) */
+    .bio-section {
+      margin-top: 24px;
+    }
+    .bio-section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(117,38,31,0.18);
+    }
+    .bio-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .bio-list li {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #444;
+      padding-left: 14px;
+      position: relative;
+    }
+    .bio-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 6px;
+      height: 1px;
+      background: var(--crimson);
+    }
+
+    /* Affiliation chips */
+    .affiliations {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .affiliations .chip {
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--crimson-light);
+      padding: 5px 11px;
+      border: 1px solid rgba(117,38,31,0.28);
+      background: rgba(117,38,31,0.05);
+      white-space: normal;
+      transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+    }
+    .affiliations .chip:hover {
+      border-color: var(--crimson);
+      color: var(--crimson);
+      background: rgba(117,38,31,0.1);
+    }
+    .affiliation-feature {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: #444;
+      margin-top: 14px;
+      padding-left: 12px;
+      border-left: 2px solid var(--crimson);
+      line-height: 1.6;
+    }
+
+    /* Stat card refinement — hairline corner marks */
+    .about-stat {
+      position: relative;
+    }
+    .about-stat::before,
+    .about-stat::after {
+      content: '';
+      position: absolute;
+      width: 12px; height: 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .about-stat::before {
+      top: 0; left: 14px;
+      border-right: none;
+      border-bottom: none;
+    }
+    .about-stat::after {
+      bottom: 0; right: 14px;
+      border-left: none;
+      border-top: none;
+    }
+    .stats-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    /* Section transition fleuron */
+    .fleuron {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 0;
+    }
+    .fleuron::before, .fleuron::after {
+      content: '';
+      height: 1px; width: 80px;
+      background: rgba(117,38,31,0.32);
+    }
+    .fleuron .mark {
+      font-family: 'Cinzel', serif;
+      font-size: 14px;
+      color: var(--crimson);
+      line-height: 1;
+      letter-spacing: 0.1em;
+    }
+
+    /* Position helper for sections that hold a chapter-mark */
+    .has-chapter { position: relative; }
+
+    @media (max-width: 768px) {
+      .chapter-mark { top: 18px; right: 22px; font-size: 10px; }
+      .chapter-mark::before { width: 14px; }
+      .drop-cap::first-letter { font-size: 4em; padding: 4px 10px 0 0; }
+      .pull-quote { padding-left: 18px; }
+      .maxim { gap: 10px; }
+      .maxim .text { font-size: 10px; letter-spacing: 0.24em; }
+    }
+
+    /* ─── PARTNER PREVIEW CARD (whole block interactive) ─── */
+    .team-card-preview {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+      outline: none;
+    }
+    .team-card-preview:hover {
+      transform: translateY(-6px);
+    }
+    .team-card-preview:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 8px;
+    }
+    .team-card-preview .team-photo-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    .team-card-preview .team-photo-wrapper img {
+      transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .team-card-preview:hover .team-photo-wrapper img {
+      transform: scale(1.04);
+    }
+    .team-card-preview .team-photo-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 75%, rgba(117,38,31,0) 100%);
+      pointer-events: none;
+      transition: background 400ms ease;
+    }
+    .team-card-preview:hover .team-photo-wrapper::after {
+      background: linear-gradient(180deg, transparent 65%, rgba(117,38,31,0.08) 100%);
+    }
+    .team-card-preview .team-card-cta {
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+    }
+    .team-card-preview:hover .team-card-cta {
+      background: var(--crimson);
+      color: #fff;
+      border-color: var(--crimson);
+      padding-right: 32px;
+    }
+    .team-card-preview:hover .team-card-cta .arrow {
+      transform: translateX(4px);
+    }
+    .team-card-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 10.5px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 18px 0 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .team-card-edu {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: #6a6a6a;
+      line-height: 1.55;
+      margin: -2px 0 14px;
+    }
+    .profile-drawer-edu {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: #6a6a6a;
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+    .team-card-eyebrow::before {
+      content: '';
+      width: 22px;
+      height: 1px;
+      background: var(--crimson);
+    }
+    .team-card-quote {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--charcoal);
+      letter-spacing: 0.005em;
+      margin: 18px 0 24px;
+      padding-left: 16px;
+      border-left: 2px solid var(--crimson);
+    }
+    .team-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11.5px;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      background: transparent;
+      border: 1px solid var(--crimson);
+      padding: 14px 26px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease, padding 0.3s ease;
+      align-self: flex-start;
+      text-decoration: none;
+    }
+    .team-card-cta:hover {
+      background: var(--crimson);
+      color: #fff;
+      padding-right: 32px;
+    }
+    .team-card-cta .arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .team-card-cta:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    /* ─── LINKEDIN — preview card badge ─── */
+    .team-card-linkedin {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(242, 237, 230, 0.92);
+      color: var(--crimson);
+      border: 1px solid rgba(117, 38, 31, 0.22);
+      box-shadow: 0 10px 24px -14px rgba(117, 38, 31, 0.55);
+      -webkit-backdrop-filter: blur(2px);
+      backdrop-filter: blur(2px);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .team-card-linkedin svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+    .team-card-linkedin:hover {
+      background: var(--crimson);
+      color: #fff;
+      transform: translateY(-2px) scale(1.06);
+      box-shadow: 0 16px 32px -14px rgba(117, 38, 31, 0.7);
+    }
+    .team-card-linkedin:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 3px;
+    }
+    .team-card-linkedin:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* ─── PARTNER PROFILE DRAWER ─── */
+    .profile-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: none;
+      visibility: hidden;
+    }
+    .profile-drawer.open {
+      pointer-events: auto;
+      visibility: visible;
+    }
+    .profile-drawer-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 400ms cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: pointer;
+    }
+    .profile-drawer.open .profile-drawer-backdrop {
+      background: rgba(10,10,10,0.55);
+      backdrop-filter: blur(2px);
+    }
+    .profile-drawer-panel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.96);
+      width: min(1020px, 92vw);
+      height: min(660px, 88vh);
+      background: var(--cream);
+      opacity: 0;
+      transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), opacity 380ms cubic-bezier(0.22, 1, 0.36, 1);
+      overflow: hidden;
+      box-shadow: 0 36px 100px -24px rgba(0,0,0,0.55), 0 8px 24px -8px rgba(0,0,0,0.25);
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+    }
+    .profile-drawer.open .profile-drawer-panel {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    .profile-drawer-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      font-family: 'Inter', sans-serif;
+      padding: 0;
+    }
+    .profile-drawer-close:hover {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      transform: scale(1.06);
+    }
+    .profile-drawer-hero {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+    .profile-drawer-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+      filter: grayscale(100%) contrast(1.04);
+    }
+    .profile-drawer-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(95deg, transparent 78%, rgba(242,237,230,0.35) 100%);
+      pointer-events: none;
+    }
+    .profile-drawer-body {
+      padding: 52px 48px 52px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100%;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(117,38,31,0.3) transparent;
+    }
+    .profile-drawer-body::-webkit-scrollbar {
+      width: 6px;
+    }
+    .profile-drawer-body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .profile-drawer-body::-webkit-scrollbar-thumb {
+      background: rgba(117,38,31,0.3);
+      border-radius: 3px;
+    }
+    .profile-drawer-body::-webkit-scrollbar-thumb:hover {
+      background: rgba(117,38,31,0.55);
+    }
+    .profile-drawer-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin: 0 0 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .profile-drawer-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--crimson);
+    }
+    .profile-drawer-name {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--crimson);
+      margin: 0 0 28px;
+      line-height: 1.1;
+    }
+    .profile-drawer-body p {
+      font-family: 'Inter', sans-serif;
+      font-size: 13.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: #3a3a3a;
+      margin: 0 0 14px;
+    }
+    .profile-drawer-body .legacy-block {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 12.5px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #555;
+      margin: 18px 0;
+      padding-left: 14px;
+      border-left: 2px solid var(--crimson);
+    }
+    .profile-drawer-body .affiliation-feature {
+      margin-top: 18px;
+      margin-bottom: 0;
+      color: var(--crimson);
+      font-weight: 500;
+    }
+    .profile-drawer-body .bio-section {
+      margin-top: 28px;
+    }
+    .profile-drawer-body .contact-line {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #555;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    .profile-drawer-body .contact-line a {
+      color: var(--crimson);
+      text-decoration: none;
+    }
+    .profile-drawer-body .contact-line .linkedin-link {
+      display: flex;
+      width: -moz-fit-content;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      margin-top: 16px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+    .profile-drawer-body .contact-line .linkedin-link svg {
+      width: 16px;
+      height: 16px;
+      display: block;
+    }
+    .profile-drawer-body .contact-line .linkedin-link:hover {
+      color: var(--crimson-light);
+      transform: translateX(2px);
+    }
+    .profile-drawer-body .contact-line .linkedin-link:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 3px;
+    }
+    .profile-drawer-body .contact-line .linkedin-link:active {
+      transform: translateX(0);
+    }
+    body.drawer-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .profile-drawer-panel {
+        width: 94vw;
+        height: 92vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 280px 1fr;
+      }
+      .profile-drawer-hero { height: 280px; }
+      .profile-drawer-body { padding: 32px 24px 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .profile-drawer-backdrop,
+      .profile-drawer-panel { transition: none !important; }
+      #hero-image { animation: none !important; transform: none !important; }
+    }
+
+    /* ─── FOOTER LEGAL SUB-LINE ─── */
+    .footer-legal {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 10.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      margin-top: 8px;
+      font-family: 'Josefin Sans', sans-serif;
+    }
+    .footer-legal a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: rgba(255,255,255,0.85); }
+    .footer-legal .dot { color: rgba(255,255,255,0.22); }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0; z-index: 1000;
+      background: var(--crimson); color: #fff;
+      padding: 10px 18px;
+      font-family: 'Josefin Sans', sans-serif; font-size: 12px;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+    }
+    .skip-link:focus-visible { left: 8px; top: 8px; outline: 2px solid #fff; outline-offset: 2px; }
+
+    /* ══════════════════════════════════════════════════════════════════
+       MOBILE OPTIMIZATION — phones (≤600px). APPEND-ONLY.
+       Everything ≥601px (tablet + desktop) is untouched: these rules add
+       overrides only at phone widths and sit after all existing media
+       queries so they win the cascade. Do not move above other @media.
+       ══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      /* Hero — keep the wordmark logo comfortably inside the viewport */
+      #hero-content { padding: 0 20px 44px; }
+      .hero-logo { width: min(82vw, 360px); }
+      .hero-tagline { margin-top: 18px; font-size: 15px; }
+
+      /* Firm statement — collapse the editorial 2-column grid to one column.
+         (The inline 56px padding on the wrapper is overridden via .firm-wrap.) */
+      .firm-wrap { padding: 64px 22px 76px !important; }
+      .firm-statement-grid { grid-template-columns: 1fr; gap: 0; }
+      /* Left-align the narrative on phones — justify leaves ugly gaps on the narrow column */
+      .firm-statement-left p { text-align: left !important; }
+      .firm-statement-closing { padding-top: 28px; }
+      .firm-statement-closing .closing-logo { width: 260px; }
+      .firm-sidebar { gap: 22px; }
+
+      /* Contact bar — collapse the inline repeat(4,1fr) icon grid to 2 columns */
+      .contact-bar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .contact-icon-block { padding: 30px 12px; }
+      .contact-link { font-size: 14px; }
+
+      /* SCC proof band — single-column court list (base is 2 columns) */
+      .proof-tribunals { column-count: 1; font-size: 17px; line-height: 1.9; }
+      .proof-quote { margin-bottom: 30px; }
+      .proof-eyebrow { margin-bottom: 22px; }
+
+      /* Editorial sections — trim horizontal padding to phone-appropriate gutters */
+      .practice-areas-section { padding: 56px 22px 68px; }
+      #notable-matters { padding: 56px 22px; }
+      #contact { padding: 56px 22px; }
+      #team-section { padding: 52px 22px; }
+      footer { padding: 28px 22px; }
+
+      /* Parallax label banners — slightly shorter on phones */
+      .parallax-banner { height: 180px; }
+
+      /* Partner profile drawer — drop the B&W hero photo on phones; keep the bio text.
+         Add top padding so the bio clears the floating close button. */
+      .profile-drawer-panel { grid-template-rows: 1fr; }
+      .profile-drawer-hero { display: none; }
+      .profile-drawer-body { padding-top: 72px; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- ─── NAV (centered masthead) ─── -->
+<nav id="site-nav">
+  <ul class="nav-links nav-left" id="nav-links-left">
+    <li><a href="#about">About</a></li>
+    <li><a href="#advocacy">Practice</a></li>
+    <li><a href="#team">Partners</a></li>
+  </ul>
+  <a href="#" class="nav-logo" aria-label="Danson Delavar LLP">
+    <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_Light.svg" alt="Danson Delavar LLP" class="logo-ivory" />
+    <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_90_Burgundy-01_90.svg" alt="" class="logo-burgundy" aria-hidden="true" />
+  </a>
+  <ul class="nav-links nav-right" id="nav-links-right">
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<span id="main-content" tabindex="-1"></span>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div id="hero-image"></div>
+  <div id="hero-divider"></div>
+  <div id="hero-grain"></div>
+  <div id="hero-overlay"></div>
+  <div id="hero-content">
+    <img
+      src="assets/logo/DansonDelavar_Logo_Burgundy-01_Light.svg"
+      alt="Danson Delavar LLP"
+      class="hero-logo"
+    />
+    <p class="hero-tagline">Trial &amp; Appellate Advocacy.</p>
+  </div>
+</section>
+
+
+<!-- ─── FIRM STATEMENT ─── -->
+<section class="firm-statement has-chapter" id="about">
+  <div class="chapter-mark"><span>§&nbsp;&nbsp;I</span></div>
+  <div class="firm-wrap" style="max-width: 1200px; margin: 0 auto; padding: 96px 56px 104px;">
+    <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 56px;" class="reveal">
+      <span style="display:inline-block; width:48px; height:1px; background:var(--crimson);"></span>
+      <p style="font-family:'Cinzel',serif; font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:var(--crimson); margin:0;">About the Firm</p>
+    </div>
+    <div class="firm-statement-grid">
+      <div class="firm-statement-left reveal">
+        <p class="drop-cap" style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; text-align:justify;">
+          Danson Delavar LLP is a Toronto litigation boutique focused on delivering strategic, sophisticated, and practical advocacy in high stakes disputes. As a team, Tim Danson and Marjan Delavar combine decades of courtroom experience with thoughtful strategic counsel, recognizing that successful advocacy requires not only strength in litigation, but also the judgment to identify risk early, develop effective solutions, and position clients advantageously before disputes escalate.
+        </p>
+        <p style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; margin-top:18px; text-align:justify;">
+          The practice includes employment law, complex personal injury litigation, complex corporate/commercial/Civil litigation, constitutional litigation, defamation, appellate advocacy, administrative law, sports law, professional negligence, and insurance litigation. As a team, the partners regularly advise and represent corporations, professionals, executives, insurers, and professional athletes in legally and reputationally sensitive matters.
+        </p>
+        <p class="pull-quote">
+          Recognized for <em>meticulous preparation, persuasive advocacy,</em> and a disciplined, results-driven approach to litigation.
+        </p>
+        <p style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; text-align:justify;">
+          As a team, Tim and Marjan's experience spans administrative proceedings, mediations, arbitrations, trials, and appeals before all levels of court, including matters involving significant public scrutiny and complex legal challenges advancing novel and evolving areas of the law.
+        </p>
+        <p style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; margin-top:18px; text-align:justify;">
+          Whether acting in wrongful dismissal disputes, shareholder and corporate commercial conflicts, libel litigation, regulatory proceedings, or complex civil matters, they approach every case with strategic precision, unwavering attention to detail, and a commitment to achieving practical and effective results for their clients.
+        </p>
+        <p style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; margin-top:18px; text-align:justify;">
+          Danson Delavar LLP is committed to maintaining a collaborative and responsive relationship with every client. The team places a premium on careful legal analysis, practical advice, and tailored litigation strategies that allow clients to make informed decisions with confidence at every stage of the process.
+        </p>
+        <p style="font-family:'Inter',sans-serif; font-size:15px; font-weight:300; line-height:1.85; color:#3a3a3a; margin-top:18px; text-align:justify;">
+          Their combined depth of experience and disciplined preparation also allows the firm to litigate efficiently and strategically. By identifying the core issues early, anticipating challenges before they arise, and avoiding unnecessary procedural steps, the firm remains focused on advancing its clients' interests in a practical and cost-effective manner — without compromising the quality or strength of the advocacy provided.
+        </p>
+
+        <div class="firm-statement-closing">
+          <img
+            src="assets/logo/DansonDelavar_Logo_Burgundy-01_90_Burgundy-01_90.svg"
+            alt="Danson Delavar LLP"
+            class="closing-logo"
+          />
+          <p class="closing-tagline">Toronto &middot; Litigation &middot; Advocacy</p>
+        </div>
+      </div>
+      <aside class="firm-sidebar reveal">
+        <div class="firm-partner-card">
+          <div class="firm-partner-photo">
+            <img loading="lazy"
+              src="assets/frame-shots/09202A5C-335D-45A4-9450-CC27577E5D4A.jpg"
+              alt="Timothy S.B. Danson"
+            />
+          </div>
+          <div class="firm-partner-meta">
+            <p class="firm-partner-name">Timothy S.B. Danson</p>
+          </div>
+        </div>
+
+        <div class="firm-partner-card">
+          <div class="firm-partner-photo">
+            <img loading="lazy"
+              src="assets/frame-shots/A27E5152-4C91-4D57-BDEC-387D894B981A.jpg"
+              alt="Marjan Delavar"
+            />
+          </div>
+          <div class="firm-partner-meta">
+            <p class="firm-partner-name">Marjan Delavar</p>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT BAR ─── -->
+<div class="contact-bar">
+  <div class="contact-bar-grid" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr);">
+    <div class="contact-icon-block reveal">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+      </div>
+      <a href="https://maps.google.com/?q=20+Eglinton+Avenue+West+Suite+1902+Toronto+ON+M4R+1K8" target="_blank" rel="noopener" class="contact-link">20 Eglinton Ave. W., Suite 1902<br />Toronto, ON&nbsp;M4R 1K8</a>
+    </div>
+    <div class="contact-icon-block reveal">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12 19.79 19.79 0 01.1 3.4 2 2 0 012.08 1.28h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.55a16 16 0 006.29 6.29l1.41-1.41a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+      </div>
+      <a href="tel:4169292200" class="contact-link">416-929-2200</a>
+    </div>
+    <div class="contact-icon-block reveal">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 8l10 6 10-6"/>
+        </svg>
+      </div>
+      <a href="mailto:info@ddlitigators.com" class="contact-link">info@ddlitigators.com</a>
+    </div>
+    <div class="contact-icon-block reveal">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+        </svg>
+      </div>
+      <a href="#contact" class="contact-link">Send Message</a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ADVOCACY PARALLAX BANNER ─── -->
+<section
+  id="advocacy"
+  class="parallax-banner"
+  style="background: linear-gradient(160deg, #0e0e0e 0%, #1a0a0a 50%, #0e0e0e 100%);"
+>
+  <h1>PRACTICE</h1>
+</section>
+
+<!-- ─── PRACTICE AREAS (editorial numbered index) ─── -->
+<section class="practice-areas-section">
+  <div class="practice-inner">
+    <p class="practice-intro reveal">
+      The team advises and represents corporations, professionals, executives, insurers, and professional athletes in legally and reputationally-sensitive matters — at every level of court and tribunal.
+    </p>
+
+    <div class="practice-list">
+
+      <article class="practice-item reveal">
+        <div class="practice-name">
+          <h2>Corporate / Commercial<br/><span class="amp">&amp;</span>&nbsp;Civil Litigation</h2>
+          <p class="practice-pull">"Protect what's been built. Defend what's at stake."</p>
+        </div>
+        <div class="practice-body">
+          <p>High-value commercial conflicts, shareholder and contractual disputes, and complex civil litigation — on behalf of corporations, professionals, executives and individuals across publicly-traded and closely-held enterprises.</p>
+          <p class="practice-tags">
+            <span>Commercial Litigation</span><span class="sep">·</span><span>Civil Litigation</span><span class="sep">·</span><span>Shareholder Disputes</span><span class="sep">·</span><span>Contractual Disputes</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="practice-item reveal">
+        <div class="practice-name">
+          <h2>Employment Law</h2>
+          <p class="practice-pull">"Guidance when it matters. Experience when it's needed. Resolution when it counts."</p>
+        </div>
+        <div class="practice-body">
+          <p>Strategic counsel and tireless advocacy on wrongful dismissal, workplace investigations, performance management, accommodation, severance, and termination matters — for both employers and individuals.</p>
+          <p class="practice-tags">
+            <span>Wrongful Dismissal</span><span class="sep">·</span><span>Workplace Investigations</span><span class="sep">·</span><span>Performance Management</span><span class="sep">·</span><span>Severance</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="practice-item reveal">
+        <div class="practice-name">
+          <h2>Constitutional Law</h2>
+          <p class="practice-pull">"Constitutional principles matter. Charter rights endure. The rule of law must prevail."</p>
+        </div>
+        <div class="practice-body">
+          <p>Precedent-setting constitutional, public-interest, and administrative-law advocacy — including matters argued before the Court of Appeal for Ontario and the Supreme Court of Canada that advance novel areas of the law.</p>
+          <p class="practice-tags">
+            <span>Charter of Rights</span><span class="sep">·</span><span>Public Interest</span><span class="sep">·</span><span>Administrative Law</span><span class="sep">·</span><span>Judicial Review</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="practice-item reveal">
+        <div class="practice-name">
+          <h2>Insurance Litigation</h2>
+          <p class="practice-pull">"Decades of insight on both sides of claims. When claims are challenged. When coverage is disputed. When the stakes are high."</p>
+        </div>
+        <div class="practice-body">
+          <p>Complex insurance disputes, professional liability, and serious personal injury litigation — representing both plaintiffs and Canadian and American insurers, with deep understanding of strategy, risk, and negotiation dynamics.</p>
+          <p class="practice-tags">
+            <span>Insurance Defence</span><span class="sep">·</span><span>Professional Liability</span><span class="sep">·</span><span>Personal Injury</span><span class="sep">·</span><span>Subrogation</span>
+          </p>
+        </div>
+      </article>
+
+      <article class="practice-item reveal">
+        <div class="practice-name">
+          <h2>Defamation Litigation</h2>
+          <p class="practice-pull">"Free speech versus protecting reputational integrity."</p>
+        </div>
+        <div class="practice-body">
+          <p>In the words of Justice Binnie in <cite>WIC Radio</cite>: &ldquo;An individual's reputation is not to be treated as regrettable but unavoidable road kill on the highway of public controversy&hellip;&rdquo;</p>
+          <p class="practice-tags">
+            <span>Libel &amp; Slander</span><span class="sep">·</span><span>Interface between constitutional &amp; common-law principles</span><span class="sep">·</span><span>Limitations on qualified privilege and other defences</span><span class="sep">·</span><span>Anti-SLAPP Proceedings</span>
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SCC PROOF BAND ─── -->
+<section class="practice-proof">
+  <div class="proof-inner">
+    <div class="proof-photo reveal">
+      <figure class="proof-figure">
+        <img loading="lazy" src="assets/frame-shots/IMG_7287.jpg" alt="Tim Danson and Marjan Delavar in barrister robes at the Supreme Court of Canada" />
+        <figcaption class="proof-caption">
+          At the Supreme Court of Canada — after successfully arguing <cite>Bent v. Platnick</cite>, <a href="https://www.canlii.org/en/ca/scc/doc/2020/2020scc23/2020scc23.html" target="_blank" rel="noopener">2020&nbsp;SCC&nbsp;23</a>.
+        </figcaption>
+      </figure>
+    </div>
+    <div class="proof-text reveal">
+      <p class="proof-eyebrow">Forums of Appearance</p>
+      <p class="proof-tribunals-label">Courts &amp; Tribunals</p>
+      <ul class="proof-tribunals">
+        <li>Supreme Court of Canada</li>
+        <li>Court of Appeal for Ontario</li>
+        <li>Federal Court of Appeal</li>
+        <li>Divisional Court</li>
+        <li>Superior Court of Justice</li>
+        <li>Federal Court (Trial Division)</li>
+        <li>Ontario Court of Justice</li>
+        <li>Court of Arbitration for Sport (CAS)</li>
+        <li>Sport Dispute Resolution Centre of Canada (SDRCC)</li>
+        <li>International Equestrian Federation</li>
+        <li>Licence Appeal Tribunal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM PARALLAX BANNER ─── -->
+<section
+  id="team"
+  class="parallax-banner"
+  style="background: linear-gradient(160deg, #0e0e0e 0%, #1a0a0a 50%, #0e0e0e 100%);"
+>
+  <h1>PARTNERS</h1>
+</section>
+
+<!-- ─── TEAM SECTION (simplified preview cards) ─── -->
+<section id="team-section">
+  <div class="team-grid">
+
+    <div class="team-card team-card-preview reveal" data-open-drawer="profile-tim" role="button" tabindex="0" aria-label="Read full profile — Timothy S.B. Danson">
+      <div class="team-photo-wrapper">
+        <img loading="lazy"
+          src="assets/frame-shots/9D3ADE17-584C-4EE8-9DB2-25E891EA65A4.jpg"
+          alt="Timothy S.B. Danson"
+          style="object-position: center 18%;"
+        />
+        <a class="team-card-linkedin" href="https://www.linkedin.com/in/timothy-s-b-danson-9a719038" target="_blank" rel="noopener noreferrer" aria-label="Timothy S.B. Danson on LinkedIn" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+      <div class="team-info">
+        <p class="team-name">Timothy S.B. Danson</p>
+        <p class="team-card-eyebrow">Partner · Called to the Bar 1980</p>
+        <p class="team-card-edu">Osgoode Hall Law &middot; 1978<br/>Political Economics, University of Toronto &middot; 1975</p>
+        <span class="team-card-cta" aria-hidden="true">
+          Read Full Profile <span class="arrow">→</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="team-card team-card-preview reveal" data-open-drawer="profile-marjan" role="button" tabindex="0" aria-label="Read full profile — Marjan Delavar">
+      <div class="team-photo-wrapper">
+        <img loading="lazy"
+          src="assets/frame-shots/hf_20260404_205612_c30a96e6-2e85-4089-90aa-554dc34555b0.jpg"
+          alt="Marjan Delavar"
+          style="object-position: center 18%;"
+        />
+        <a class="team-card-linkedin" href="https://www.linkedin.com/in/marjan-delavar-48b65647" target="_blank" rel="noopener noreferrer" aria-label="Marjan Delavar on LinkedIn" onclick="event.stopPropagation()" onkeydown="event.stopPropagation()">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        </a>
+      </div>
+      <div class="team-info">
+        <p class="team-name">Marjan Delavar</p>
+        <p class="team-card-eyebrow">Partner · Called to the Bar 2002</p>
+        <p class="team-card-edu">Osgoode Hall Law School &middot; 2001 J.D.<br/>York University &middot; 1998 B.A. (Hons.)</p>
+        <span class="team-card-cta" aria-hidden="true">
+          Read Full Profile <span class="arrow">→</span>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── PARTNER PROFILE DRAWERS ─── -->
+<div id="profile-tim" class="profile-drawer" aria-hidden="true">
+  <div class="profile-drawer-backdrop" data-close-drawer></div>
+  <article class="profile-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="profile-tim-name">
+    <button class="profile-drawer-close" aria-label="Close" data-close-drawer>×</button>
+    <div class="profile-drawer-hero">
+      <img loading="lazy" src="assets/frame-shots/9D3ADE17-584C-4EE8-9DB2-25E891EA65A4.jpg" alt="" />
+    </div>
+    <div class="profile-drawer-body">
+      <p class="profile-drawer-eyebrow">Partner · Called to the Bar 1980</p>
+      <p class="profile-drawer-edu">Osgoode Hall Law &middot; 1978<br/>Political Economics, University of Toronto &middot; 1975</p>
+      <h2 class="profile-drawer-name" id="profile-tim-name">Timothy S.B. Danson</h2>
+
+      <p>Timothy S.B. Danson is a Partner at Danson Delavar LLP. He graduated from Osgoode Hall Law School in 1978 and was called to the Ontario Bar in 1980, after completing the Bar Admission Course at the Law Society of Upper Canada.</p>
+
+      <p>Tim maintains a broad litigation and appellate practice spanning corporate/commercial disputes, constitutional, sports law and administrative law, defamation, complex personal injury and medical malpractice, contract, insurance, fraud and fidelity, criminal law, environmental protection, and employment law. He regularly advises and represents corporations, executives, professional athletes, professionals, and government bodies in legally and reputationally sensitive matters. Known for his strategic approach to dispute resolution, Tim works to identify legal risks early, develop creative and discreet solutions, and resolve complex matters through problem identification and consensus building — at trial when necessary, and outside the courtroom whenever possible.</p>
+
+      <p>Drawing on <strong style="font-weight:600; color:var(--crimson);">46 years</strong> of trial and appellate experience, Tim is recognized for his meticulous attention to detail and preparation, persuasive advocacy, and ability to argue precedent-setting cases at every level of court. His practice has spanned the representation of publicly-traded corporations, individual executives, professional athletes, families of victims of crime, professional associations, and regulators — providing him with an exceptional understanding of litigation strategy, public-interest advocacy, and the dynamics of high-stakes and high-profile proceedings across an exceptionally broad range of complex matters.</p>
+
+      <p>Tim has worked extensively on high profile cases including cases involving professional athletes, doping and disciplinary proceedings, and matters attracting significant public scrutiny. He has represented clients before numerous specialized and administrative tribunals, including the Court of Arbitration for Sport, the International Equestrian Federation, and a wide range of professional regulatory bodies.</p>
+
+      <p>An experienced trial and appellate advocate, Tim has appeared before all levels of court in Ontario — including many appearances before the Court of Appeal for Ontario and the Supreme Court of Canada.</p>
+
+      <p class="affiliation-feature">
+        Advisory Board — Trudeau Centre for Peace, Conflict and Justice at University of Toronto, Munk School of Global Affairs
+      </p>
+      <p>Outside his litigation practice, Tim is a frequent speaker at judicial conferences, Crown counsel forums, police and medical conferences, and at law schools across Canada and the United States — including Osgoode Hall, Queen's, the University of Calgary, the University of New Brunswick, Western Ontario, and Fordham. He is regularly consulted by provincial and federal governments on matters of legislation and policy. He is the CEO of Danson Sports and Entertainment Ltd., an adjunct to his law practice providing non-legal management and consultation services for athletes around the world.</p>
+
+      <p class="legacy-block">Tim has also gained a unique perspective on problem identification and resolution as a result of being exposed throughout his life to the diversity and challenges of Canadian and international politics, wherein viewing complex problems requires the ability to see issues from many different perspectives. Tim's father, The Honourable Barnett J. Danson, P.C., C.C., LLD., Lég. d'honneur (Fr.), was also his mentor. Mr. Danson Sr. instilled in Tim a strong sense of public service, discipline, hard work and the importance of conducting one's affairs with civility, professionalism, integrity and honour.</p>
+
+      <p>Outside the practice of law, Tim is an avid outdoorsman, with a particular love for extreme deep powder skiing, horseback riding, tennis, hockey, and angling.</p>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Education</p>
+        <ul class="bio-list">
+          <li>Political Economics, University of Toronto</li>
+          <li>Bachelor of Laws, Osgoode Hall Law School</li>
+        </ul>
+      </div>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Practice Areas</p>
+        <ul class="bio-list">
+          <li>Corporate/Commercial/Civil Litigation</li>
+          <li>Constitutional Law</li>
+          <li>Appellate Advocacy</li>
+          <li>Employment Law</li>
+          <li>Sports Law</li>
+          <li>Defamation Litigation</li>
+          <li>Criminal and Quasi-Criminal</li>
+          <li>Insurance Litigation</li>
+          <li>Administrative Law</li>
+          <li>Environmental Protection and Conservation</li>
+        </ul>
+      </div>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Professional Affiliations</p>
+        <div class="affiliations" aria-label="Professional affiliations">
+          <span class="chip">Law Society of Ontario</span>
+          <span class="chip">International Bar Association</span>
+          <span class="chip">The Advocates' Society</span>
+          <span class="chip">Sports Lawyers Association</span>
+          <span class="chip">Canadian Bar Association</span>
+          <span class="chip">Ontario Bar Association</span>
+          <span class="chip">Toronto Lawyers' Association</span>
+          <span class="chip">Criminal Lawyers' Association</span>
+          <span class="chip">Advisory Board — Trudeau Centre for Peace, Conflict and Justice, Munk Centre for Global Affairs, University of Toronto</span>
+        </div>
+      </div>
+
+      <p class="contact-line">
+        <a href="mailto:danson@ddlitigators.com">danson@ddlitigators.com</a><br/>
+        <a href="tel:6479326581">647-932-6581</a> (direct) &nbsp;·&nbsp; 416-929-2200 Ext. 106
+        <a class="linkedin-link" href="https://www.linkedin.com/in/timothy-s-b-danson-9a719038" target="_blank" rel="noopener noreferrer" aria-label="Timothy S.B. Danson on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </article>
+</div>
+
+<div id="profile-marjan" class="profile-drawer" aria-hidden="true">
+  <div class="profile-drawer-backdrop" data-close-drawer></div>
+  <article class="profile-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="profile-marjan-name">
+    <button class="profile-drawer-close" aria-label="Close" data-close-drawer>×</button>
+    <div class="profile-drawer-hero">
+      <img loading="lazy" src="assets/frame-shots/hf_20260404_205612_c30a96e6-2e85-4089-90aa-554dc34555b0.jpg" alt="" />
+    </div>
+    <div class="profile-drawer-body">
+      <p class="profile-drawer-eyebrow">Partner · Called to the Bar 2002</p>
+      <p class="profile-drawer-edu">Osgoode Hall Law School &middot; 2001 J.D.<br/>York University &middot; 1998 B.A. (Hons.)</p>
+      <h2 class="profile-drawer-name" id="profile-marjan-name">Marjan Delavar</h2>
+
+      <p>Marjan Delavar is a Partner at Danson Delavar LLP. She graduated from Osgoode Hall Law School in 2001 and joined the firm in 2002 after completing her articles in the Legal Department of the Toronto Transit Commission. While at Osgoode, she was a member of the winning Goodman and Carr mooting team and volunteered through the school's Community and Legal Aid Services Program.</p>
+
+      <p>Prior to law school, Marjan obtained her Honours Bachelor of Arts degree from York University, graduating Cum Laude. In 1993, she was awarded the Governor General of Canada Bronze Medal.</p>
+
+      <p>Marjan maintains a broad litigation practice with a particular focus on employment law, complex civil litigation, and high-stakes personal injury matters. She regularly advises employers and management on wrongful dismissal claims, workplace investigations, performance management, progressive discipline, workplace accommodation, return-to-work strategies, and termination and severance issues. Known for her strategic approach to dispute resolution, she works closely with employers to identify legal risks early, develop effective workplace strategies, and navigate complex employment disputes with care and sensitivity.</p>
+
+      <p>Drawing on nearly 25 years of litigation experience, Marjan is recognized for her meticulous preparation and strong advocacy. Her background representing both plaintiffs and Canadian and American insurers has provided her with a deep understanding of litigation strategy, risk assessment, and negotiation dynamics across a broad range of complex matters.</p>
+
+      <p>Second chair to her partner Tim Danson, Marjan has worked extensively on defamation, appellate, sports law, and professional regulatory matters — including cases involving professional athletes, doping and disciplinary proceedings, and matters attracting significant public scrutiny. She has represented clients before numerous administrative tribunals, including the Financial Services Commission of Ontario (now LAT), the Workplace Safety and Insurance Appeals Tribunal, the International Equestrian Federation, and the Court of Arbitration for Sport.</p>
+
+      <p>An experienced trial and appellate advocate, Marjan has appeared before all levels of court in Ontario — including the Ontario Court of Justice, Superior Court of Justice, Divisional Court, and the Court of Appeal for Ontario — as well as the Federal Court and the Supreme Court of Canada.</p>
+
+      <p class="affiliation-feature">
+        Founder &amp; President — Neeki Support Foundation (est. 2012)
+      </p>
+      <p>Outside her litigation practice, Marjan is actively involved in pro bono advocacy and community initiatives. Neeki Support Foundation is a not-for-profit she founded in 2012 to provide social support and interest-free financial assistance to individuals facing immediate hardship.</p>
+
+      <p class="legacy-block">An avid hot yogi, a floral and interior design enthusiast and frequent traveller, Marjan enjoys exploring new parts of the world. Deeply proud of her Persian heritage, she draws inspiration from its rich culture, poetry, art, and sense of community, influences that continue to shape both her personal life and worldview.</p>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Education</p>
+        <ul class="bio-list">
+          <li>Bachelor of Arts (Honours, Cum Laude), York University</li>
+          <li>Juris Doctor, Osgoode Hall Law School</li>
+        </ul>
+      </div>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Practice Areas</p>
+        <ul class="bio-list">
+          <li>Civil Litigation</li>
+          <li>Employment Law</li>
+          <li>Serious Personal Injury</li>
+          <li>Insurance Defence</li>
+          <li>Professional Negligence</li>
+          <li>Defamation Litigation</li>
+          <li>Sports Law</li>
+        </ul>
+      </div>
+
+      <div class="bio-section">
+        <p class="bio-section-label">Professional Affiliations</p>
+        <div class="affiliations" aria-label="Professional affiliations">
+          <span class="chip">Law Society of Ontario</span>
+          <span class="chip">Canadian Bar Association</span>
+          <span class="chip">Ontario Bar Association</span>
+          <span class="chip">Ontario Trial Lawyers Association</span>
+          <span class="chip">Iranian Canadian Legal Professionals</span>
+        </div>
+      </div>
+
+      <p class="contact-line">
+        <a href="mailto:marjan@ddlitigators.com">marjan@ddlitigators.com</a><br/>
+        <a href="tel:6479328569">647-932-8569</a> (direct) &nbsp;·&nbsp; 416-929-2200 Ext. 114
+        <a class="linkedin-link" href="https://www.linkedin.com/in/marjan-delavar-48b65647" target="_blank" rel="noopener noreferrer" aria-label="Marjan Delavar on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+      </p>
+    </div>
+  </article>
+</div>
+<!-- TEAM SECTION + DRAWERS END -->
+
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <p class="contact-eyebrow">Get in Touch</p>
+  <h2>Contact</h2>
+  <div style="height: 36px;"></div>
+  <div class="contact-form-grid">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact" />
+      <p hidden aria-hidden="true"><label>Leave this field empty: <input name="bot-field" /></label></p>
+      <div class="form-field">
+        <label for="cf-name">Full Name</label>
+        <input id="cf-name" type="text" name="name" autocomplete="name" placeholder="Your name" required />
+      </div>
+      <div class="form-field">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" type="email" name="email" autocomplete="email" spellcheck="false" placeholder="your@email.com" required />
+      </div>
+      <div class="form-field">
+        <label for="cf-phone">Phone</label>
+        <input id="cf-phone" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+1 (000) 000-0000" />
+      </div>
+      <div class="form-field">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" placeholder="Briefly describe your matter…" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p id="form-status" style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.5);"></p>
+    </form>
+
+    <div class="contact-details reveal">
+      <h3>Danson Delavar LLP</h3>
+      <div class="contact-detail-row">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <p>20 Eglinton Avenue West, Suite 1902<br />Toronto, ON&nbsp;M4R 1K8</p>
+      </div>
+      <div class="contact-detail-row">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 12 19.79 19.79 0 01.1 3.4 2 2 0 012.08 1.28h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.55a16 16 0 006.29 6.29l1.41-1.41a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+        </svg>
+        <p><a href="tel:4169292200">416-929-2200</a><br /><span style="font-size:12px; opacity:0.6;">Fax: 416-929-2192</span></p>
+      </div>
+      <div class="contact-detail-row">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 8l10 6 10-6"/>
+        </svg>
+        <div>
+          <p><a href="mailto:info@ddlitigators.com">info@ddlitigators.com</a></p>
+          <p style="margin-top:6px; font-size:12px; line-height:1.8; opacity:0.7;">
+            Timothy S.B. Danson &mdash; Ext. 106<br />
+            <a href="mailto:danson@ddlitigators.com" style="color:inherit;">danson@ddlitigators.com</a><br />
+            Marjan Delavar &mdash; Ext. 114<br />
+            <a href="mailto:marjan@ddlitigators.com" style="color:inherit;">marjan@ddlitigators.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="contact-detail-row" style="margin-top:20px;">
+        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+        <div>
+          <p style="font-weight:500; color:rgba(255,255,255,0.85); margin-bottom:4px;">Getting Here</p>
+          <p style="font-size:13px; line-height:1.7; color:rgba(255,255,255,0.6);">
+            Directly on the Yonge–University subway line (Line 1), <strong style="color:rgba(255,255,255,0.8);">Eglinton Station</strong>.<br />
+            Also accessible via the Eglinton Crosstown LRT (Line 5).<br />
+            Heart of midtown Toronto.
+          </p>
+          <a href="https://maps.google.com/?q=20+Eglinton+Avenue+West+Suite+1902+Toronto+ON+M4R+1K8" target="_blank" rel="noopener"
+            class="get-directions-link">
+            Get Directions &rarr;
+          </a>
+        </div>
+      </div>
+      <br />
+      <p style="font-size:12px; line-height:1.7; color:rgba(255,255,255,0.35);">
+        Please note that any correspondence is informational only. You will not be considered a client of the firm until we have agreed to act for you in accordance with our usual policies for accepting clients.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <img src="assets/logo/DansonDelavar_Logo_Burgundy-01_Light.svg" alt="Danson Delavar LLP" class="footer-logo-img" />
+  <ul class="footer-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#advocacy">Practice</a></li>
+    <li><a href="index.html#team">Partners</a></li>
+    <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy-stack">
+    <p class="footer-copy">&copy; 2026 Danson Delavar LLP. All rights reserved.</p>
+    <p class="footer-legal">
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  /* ── Nav scroll ── */
+  const nav = document.getElementById('site-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+
+  /* ── Mobile menu ── */
+  const toggle = document.getElementById('mobile-toggle');
+  toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
+  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
+
+
+  /* ── Scroll reveal ── */
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  /* ── Partner Profile Drawer ── */
+  (function initProfileDrawers() {
+    const drawers = document.querySelectorAll('.profile-drawer');
+    if (!drawers.length) return;
+
+    let lastFocused = null;
+
+    function openDrawer(id) {
+      const drawer = document.getElementById(id);
+      if (!drawer) return;
+      lastFocused = document.activeElement;
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('drawer-open');
+      // focus close button shortly after the panel slides in
+      const closeBtn = drawer.querySelector('.profile-drawer-close');
+      if (closeBtn) setTimeout(() => closeBtn.focus(), 100);
+    }
+
+    function closeDrawer(drawer) {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      // re-check if any drawer is still open before unlocking scroll
+      const stillOpen = document.querySelector('.profile-drawer.open');
+      if (!stillOpen) document.body.classList.remove('drawer-open');
+      // restore focus to the element that opened the drawer
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    }
+
+    // open triggers (click + keyboard)
+    document.querySelectorAll('[data-open-drawer]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const id = el.getAttribute('data-open-drawer');
+        openDrawer(id);
+      });
+      // keyboard activation: Enter or Space on a focusable card
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const id = el.getAttribute('data-open-drawer');
+          openDrawer(id);
+        }
+      });
+    });
+
+    // close triggers (backdrop + × button)
+    document.querySelectorAll('[data-close-drawer]').forEach(el => {
+      el.addEventListener('click', () => {
+        const drawer = el.closest('.profile-drawer');
+        if (drawer) closeDrawer(drawer);
+      });
+    });
+
+    // ESC closes the open drawer
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      const open = document.querySelector('.profile-drawer.open');
+      if (open) closeDrawer(open);
+    });
+  })();
+
+  /* ── Contact form ── */
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    const form = e.target;
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      });
+      if (res.ok) {
+        status.textContent = 'Thank you. We will be in touch shortly.';
+        form.reset();
+      } else {
+        status.textContent = 'There was an issue. Please try again or email us directly.';
+      }
+    } catch {
+      status.textContent = 'There was an issue. Please try again or email us directly.';
+    }
+  }
+</script>
+
+</body>
+</html>
