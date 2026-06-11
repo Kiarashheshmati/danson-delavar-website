@@ -381,6 +381,76 @@
     .quote-card.empty::before { color: #aaa; opacity: 0.25; }
     .quote-card.empty .quote { color: #999; }
 
+    /* ─── GOOGLE REVIEW CTA ─── */
+    .review-cta {
+      margin-top: 88px;
+      padding-top: 66px;
+      border-top: 1px solid rgba(117,38,31,0.18);
+      text-align: center;
+    }
+    .review-cta-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 18px;
+    }
+    .review-cta-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: clamp(26px, 3vw, 38px);
+      letter-spacing: 0.02em;
+      line-height: 1.12;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    .review-cta-lede {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      max-width: 540px;
+      margin: 0 auto 36px;
+    }
+    .review-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 38px;
+      background: var(--crimson);
+      color: #fff;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid var(--crimson);
+      box-shadow: 0 18px 38px -20px rgba(117,38,31,0.55);
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), background 0.3s ease, box-shadow 0.35s ease, border-color 0.3s ease;
+    }
+    .review-cta-btn:hover {
+      background: var(--crimson-light);
+      border-color: var(--crimson-light);
+      transform: translateY(-3px);
+      box-shadow: 0 28px 52px -22px rgba(117,38,31,0.62);
+    }
+    .review-cta-btn:active { transform: translateY(-1px); }
+    .review-cta-btn:focus-visible {
+      outline: 2px solid var(--crimson);
+      outline-offset: 4px;
+    }
+    .review-cta-star {
+      width: 17px; height: 17px;
+      fill: currentColor;
+      flex-shrink: 0;
+      transition: transform 0.45s cubic-bezier(0.22,1,0.36,1);
+    }
+    .review-cta-btn:hover .review-cta-star { transform: rotate(72deg) scale(1.08); }
+
     /* ─── FOOTER ─── */
     footer {
       background: #111;
@@ -450,6 +520,8 @@
       .page-banner { padding: 132px 24px 72px; }
       .page-body { padding: 72px 20px 96px; }
       .quote-grid { grid-template-columns: 1fr; gap: 20px; }
+      .review-cta { margin-top: 60px; padding-top: 50px; }
+      .review-cta-btn { padding: 15px 30px; letter-spacing: 0.16em; }
       footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
       .footer-links { justify-content: center; flex-wrap: wrap; }
     }
@@ -827,19 +899,6 @@
         </div>
       </article>
 
-      <article class="quote-card reveal" data-open-test="test-zoricic" role="button" tabindex="0" aria-label="Read full testimonial — Bebe, Silvia and Kat Zoricic">
-        <p class="quote">
-          Tim stands out with his high-energy, honesty, passion for justice, and dedication to what is right and fair. Tim never gave up. He kept his word and so much more.
-        </p>
-        <div class="attribution">
-          <div class="badge">BZ</div>
-          <div>
-            <div class="who">Bebe, Silvia and Kat Zoricic</div>
-            <div class="role">Parents and sister to International Canadian Ski Cross Champion, Nik Zoricic</div>
-          </div>
-        </div>
-      </article>
-
       <article class="quote-card reveal" data-open-test="test-stephenson" role="button" tabindex="0" aria-label="Read full testimonial — Jim & Anna Stephenson">
         <p class="quote">
           You successfully mounted an intense and unparalleled examination of Canadian correctional and parole systems. Your commitment and hard work never faltered.
@@ -904,7 +963,33 @@
           </div>
         </div>
       </article>
+
+      <article class="quote-card reveal" data-open-test="test-ellie" role="button" tabindex="0" aria-label="Read full testimonial — Ellie F.">
+        <p class="quote">
+          She isn’t just looking to close a file; she’s looking to get the best result possible for you. When Marjan is handling your file, you never have to wonder whether it’s getting the attention it deserves.
+        </p>
+        <div class="attribution">
+          <div class="badge">EF</div>
+          <div>
+            <div class="who">Ellie F.</div>
+            <div class="role">Insurance &amp; Employment &middot; Business Owner</div>
+          </div>
+        </div>
+      </article>
     </div>
+
+    <!-- ─── GOOGLE REVIEW CTA ─── -->
+    <aside class="review-cta reveal">
+      <p class="review-cta-eyebrow">Worked With Us?</p>
+      <h2 class="review-cta-title">Share Your Experience</h2>
+      <p class="review-cta-lede">If Danson Delavar LLP has stood beside you, we would be grateful if you took a moment to share your experience with others on Google.</p>
+      <a href="https://www.google.com/maps?cid=11301130660917723070" target="_blank" rel="noopener" class="review-cta-btn">
+        <svg class="review-cta-star" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M12 2.2l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.25l-5.91 3.11 1.13-6.57L2.45 9.14l6.6-.96L12 2.2z"/>
+        </svg>
+        Leave a Google Review
+      </a>
+    </aside>
   </div>
 </section>
 
@@ -1078,32 +1163,6 @@
   </article>
 </div>
 
-<div id="test-zoricic" class="test-modal" aria-hidden="true">
-  <div class="test-modal-backdrop" data-close-test></div>
-  <article class="test-modal-panel" role="dialog" aria-modal="true">
-    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
-    <div class="test-modal-body">
-      <p class="test-modal-mark">&ldquo;</p>
-      <div class="test-modal-quote">
-        <p>Where to start &hellip; that dreadful day, March 10th 2012, when our world crumbled into pieces.</p>
-        <p>We knew Tim for many years as a member of the Craigleith Ski Club and could never have imagined that our destiny would get us close together over something so tragic&hellip; the loss of our son and brother. We first spoke to Tim to get his perspective on what had gone wrong and whether there could be lessons learned from this tragedy so that no other family would have to go through this. Tim was a friend who listened; he was a parent who understood; he was a lawyer who analyzed &hellip; We connected. Tim, with his amazing sensitivity, humanity, empathy and ability to convey complex information in simple ways, helped us to focus on what we all believed to be the only good that could come from something so bad &ndash; improving the safety of the sport for other athletes.</p>
-        <p>Needless to say, we knew that the legal fees associated with work of this nature would be enormous and not something that we would be able to afford. Tim felt the pain in our hearts and told us that he would help us free of charge, regardless of how extensive the work was, even if it resulted in a full trial. At a time of enormous grief and despair and when we were most vulnerable, Tim promised us that he would work with us to expose the errors that led to Nik's death and make sure that there were important lessons to be learned, to make sure such that a tragedy would never happen again; that silence and indifference would not be Nik's legacy, but rather positive, meaningful and constructive change to ensure skier safety would be Nik's legacy. The endless hours, commitment and dedication that followed to effect a positive outcome would have stopped many, but not Tim.</p>
-        <p>This journey has connected us forever, and this connection is beyond being extremely impressed with Tim&hellip;. In a highly specialized legal industry, Tim definitely stands out with his high-energy, honesty, passion for justice, and dedication to what is right and fair. Tim stands out with his analytical, insightful and strategic mind. But above all of this, is his heart and passion&hellip;. We knew we were tackling a huge undertaking of getting the sport regulations changed based on lessons learned so that no other similar tragedy would occur again. Tim never gave up. He kept his word and so much more. Tim has given us constant support in forcing a critically important conversation about lessons to be learned and effective change. Tim always encouraged us, particularly in moments of weakness and great sadness, to keep the faith and to focus on Nik's legacy; a legacy which stands for issues that are important to athletes and to the ski community who have been desperate for systemic and attitudinal changes to make the sport safer.</p>
-        <p>Tim has also helped with shaping the Nik Zoricic Foundation's mandate and direction. NZ Foundation will focus on improving the safety of the sport over the many years to come. Tim's input has given us the opportunity to challenge our assumptions and to look at the mandate from different perspectives.</p>
-        <p>From a personal point of view, we see Tim as our extended family now. It has been a very enriching experience in the most tragic circumstances imaginable. Thank you Tim from the bottom of our heart, not only for what you have done for us, but also for the sport of skiing and the athletes that continue to work hard in competing and proudly representing their countries in the international circuit.</p>
-        <p>With warmest regards,<br/>Bebe, Silvia and Kat Zoricic</p>
-      </div>
-      <div class="test-modal-attribution">
-        <div class="badge">BZ</div>
-        <div>
-          <div class="who">Bebe, Silvia and Kat Zoricic</div>
-          <div class="role">Parents and sister to International Canadian Ski Cross Champion, Nik Zoricic</div>
-        </div>
-      </div>
-    </div>
-  </article>
-</div>
-
 <div id="test-stephenson" class="test-modal" aria-hidden="true">
   <div class="test-modal-backdrop" data-close-test></div>
   <article class="test-modal-panel" role="dialog" aria-modal="true">
@@ -1220,6 +1279,28 @@
         <div>
           <div class="who">Hamed M.</div>
           <div class="role">Catastrophic Personal Injury &middot; Elderly Family Case</div>
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+
+<div id="test-ellie" class="test-modal" aria-hidden="true">
+  <div class="test-modal-backdrop" data-close-test></div>
+  <article class="test-modal-panel" role="dialog" aria-modal="true">
+    <button class="test-modal-close" aria-label="Close" data-close-test>&times;</button>
+    <div class="test-modal-body">
+      <p class="test-modal-mark">&ldquo;</p>
+      <div class="test-modal-quote">
+        <p>We have worked with Marjan on a few matters over the years and what we appreciate most is that she truly cares about the outcome. She isn’t just looking to close a file; she’s looking to get the best result possible for you. Most recently, she handled an insurance coverage issue involving a commercial policy for us. I’ll be honest, at one point I was ready to settle for an outcome that I thought was fair, but Marjan pushed back. She took the time to walk me through why we could do better, and I’m so glad I listened to her. We ended up with a result that far exceeded our expectations. She’s incredibly sharp and thorough but what we appreciated most was the peace of mind that came from knowing she was handling everything. When Marjan is handling your file, you never have to wonder whether it’s getting the attention it deserves.</p>
+        <p>As business owners, what we have valued most about working with Marjan is that she treats you like a person, not just a case number. She takes the time to understand your situation, explains everything in plain English, and is always upfront about the reality of your options. In addition to the recent insurance dispute, she has helped us with a number of legal issues over the years, including employment and HR-related matters. The experience has been consistent every time: she is professional, responsive, and works incredibly hard. When an issue lands on her desk, we know it is being handled with our best interests in mind.</p>
+        <p>It’s hard to find a lawyer who is as dedicated as she is. Having Marjan on our side has given us real peace of mind. We would recommend her to anyone looking for a lawyer who is not only skilled, but genuinely in their corner.</p>
+      </div>
+      <div class="test-modal-attribution">
+        <div class="badge">EF</div>
+        <div>
+          <div class="who">Ellie F.</div>
+          <div class="role">Insurance &amp; Employment &middot; Business Owner</div>
         </div>
       </div>
     </div>
