@@ -179,6 +179,7 @@
       position: relative;
       width: 100%;
       height: 100vh;
+      height: 100svh; /* iOS: size to the small viewport so the wordmark clears the toolbar */
       min-height: 640px;
       overflow: hidden;
       background: #0a0a0a;
@@ -2209,6 +2210,55 @@
     .skip-link:focus-visible { left: 8px; top: 8px; outline: 2px solid #fff; outline-offset: 2px; }
 
     /* ══════════════════════════════════════════════════════════════════
+       PORTRAIT HERO — phones and tablets held upright.
+       The landscape pair photo is centred on the gap between the partners,
+       so `cover` on a portrait screen crops both faces away and shows two
+       shoulders and a seam. Split the same file into two half-width panels,
+       each framed on one partner; the existing centre divider sits between
+       them. Face x-centres are 20% (Tim) and 71.7% (Marjan) of the image;
+       the panel is 50vw wide and the image renders 74% of the hero tall, so
+       offset = 25vw − face × (74% × 1.792 aspect) × hero height, where the
+       hero height is max(100svh, its min-height).
+       ══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) and (orientation: portrait) {
+      #hero { min-height: 560px; } /* lets a 568px-tall phone hold the whole hero */
+      #hero-image { background-image: none; }
+      #hero-image::before,
+      #hero-image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background-image: url('assets/frame-shots/hero-pair.jpg');
+        background-repeat: no-repeat;
+        background-size: auto 74%;
+      }
+      #hero-image::before {
+        left: 0;
+        background-position: calc(25vw - 0.2652 * max(100vh, 560px)) 48px;
+        background-position: calc(25vw - 0.2652 * max(100svh, 560px)) 48px;
+      }
+      #hero-image::after {
+        right: 0;
+        background-position: calc(25vw - 0.9507 * max(100vh, 560px)) 48px;
+        background-position: calc(25vw - 0.9507 * max(100svh, 560px)) 48px;
+      }
+      /* Ground the wordmark: fade to solid by ~79%, where the portraits end */
+      #hero-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(0,0,0,0.40) 0%,
+          rgba(0,0,0,0.05) 28%,
+          rgba(0,0,0,0.05) 50%,
+          rgba(10,10,10,0.82) 71%,
+          #0a0a0a 79%,
+          #0a0a0a 100%
+        );
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════
        MOBILE OPTIMIZATION — phones (≤600px). APPEND-ONLY.
        Everything ≥601px (tablet + desktop) is untouched: these rules add
        overrides only at phone widths and sit after all existing media
@@ -2255,6 +2305,38 @@
       .profile-drawer-panel { grid-template-rows: 1fr; }
       .profile-drawer-hero { display: none; }
       .profile-drawer-body { padding-top: 72px; }
+
+      /* Partner profile drawer — iOS small-viewport height so the bio's end
+         (email, LinkedIn) is reachable above the toolbar; opaque close button
+         because the hero photo it used to sit on is hidden here, so the bio
+         text now scrolls under it. */
+      .profile-drawer-panel { height: 92vh; height: 92svh; }
+      .profile-drawer-close {
+        top: 12px;
+        right: 12px;
+        background: var(--cream);
+        color: var(--crimson);
+        border-color: rgba(117,38,31,0.35);
+        box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+      }
+      .profile-drawer-eyebrow { letter-spacing: 0.24em; line-height: 1.8; }
+      .profile-drawer-eyebrow::before { display: none; }
+
+      /* Contact form — 16px stops iOS Safari zooming the page on focus */
+      .form-field input,
+      .form-field textarea { font-size: 16px; }
+
+      /* SCC proof band — tighten the tracked eyebrow so it holds one line */
+      .proof-eyebrow { font-size: 13px; letter-spacing: 0.3em; gap: 12px; }
+      .proof-eyebrow::before { width: 28px; }
+
+      /* Contact bar + footer — thumb-sized link targets; centre the legal line
+         under the centred copyright instead of hanging it off the right edge */
+      .contact-link { display: inline-block; padding: 6px 0; }
+      .footer-links { gap: 4px 12px; }
+      .footer-links a { display: inline-block; padding: 10px 6px; }
+      .footer-copy-stack { align-items: center; }
+      .footer-legal { justify-content: center; }
     }
   </style>
 </head>
@@ -2276,7 +2358,7 @@
     <li><a href="testimonials.html">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Open menu">
+  <div class="mobile-toggle" id="mobile-toggle" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -2858,8 +2940,16 @@
 
   /* ── Mobile menu ── */
   const toggle = document.getElementById('mobile-toggle');
-  toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
-  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
+  const setMenu = (open) => {
+    nav.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  toggle.addEventListener('click', () => setMenu(!nav.classList.contains('menu-open')));
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMenu(!nav.classList.contains('menu-open')); }
+  });
+  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
 
   /* ── Scroll reveal ── */

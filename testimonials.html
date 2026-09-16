@@ -762,6 +762,12 @@
       .featured-text { padding: 32px 24px 38px; }
       .quote-card { padding: 44px 26px 32px; }
       .quote-card::before { font-size: 72px; top: 6px; left: 20px; }
+
+      /* Testimonial modal — iOS small-viewport height so the attribution is
+         reachable above the toolbar; opaque close button so the quote can
+         scroll under it without the two colliding. */
+      .test-modal-panel { max-height: 90vh; max-height: 90svh; }
+      .test-modal-close { background: var(--cream); box-shadow: 0 2px 14px rgba(0,0,0,0.14); }
     }
 
   </style>
@@ -783,7 +789,7 @@
     <li><a href="testimonials.html" class="active">Testimonials</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <div class="mobile-toggle" id="mobile-toggle" role="button" aria-label="Open menu">
+  <div class="mobile-toggle" id="mobile-toggle" role="button" tabindex="0" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </div>
 </nav>
@@ -1323,8 +1329,16 @@
 <script>
   const toggle = document.getElementById('mobile-toggle');
   const nav = document.getElementById('site-nav');
-  toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
-  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => nav.classList.remove('menu-open')));
+  const setMenu = (open) => {
+    nav.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  toggle.addEventListener('click', () => setMenu(!nav.classList.contains('menu-open')));
+  toggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMenu(!nav.classList.contains('menu-open')); }
+  });
+  document.querySelectorAll('#site-nav .nav-links a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver(entries => {
